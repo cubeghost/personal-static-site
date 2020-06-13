@@ -33,6 +33,7 @@ export default function prerender(locals) {
     <head>
       ${helmet.title.toString()}
       ${helmet.meta.toString()}
+      ${helmet.link.toString()}
       <meta name="viewport" content="width=device-width, initial-scale=1">
       ${styleTags}
       ${scriptTags}

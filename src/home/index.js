@@ -1,8 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
 
 const Home = () => (
   <div>
-    Hewwo! homepage
+    <h1>⟡*·_ cubeghost (alex baldwin)</h1>
+
   </div>
 );
 
