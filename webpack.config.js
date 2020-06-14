@@ -39,6 +39,12 @@ module.exports = () => {
         loader: 'file-loader',
       },
     },
+    {
+      test: /\.md$/,
+      use: {
+        loader: 'raw-loader',
+      },
+    },
   ];
 
   return [
@@ -95,7 +101,11 @@ module.exports = () => {
         ...plugins,
         new StaticSiteGeneratorPlugin({
           entry: 'prerender',
-          paths: ['/'],
+          paths: [
+            '/',
+            '/kidpix',
+            '/kidpix/tutorial',
+          ],
           locals: {},
         }),
       ],
