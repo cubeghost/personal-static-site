@@ -24,13 +24,13 @@ const PageStyle = createGlobalStyle`
   }
 `;
 
-const Page = ({children}) => (
+const Page = ({className, children}) => (
   <>
     <PageStyle />
     <Helmet>
       <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
     </Helmet>
-    <Page.Container>
+    <Page.Container className={className}>
       {children}
     </Page.Container>
   </>
@@ -39,9 +39,10 @@ const Page = ({children}) => (
 export default React.memo(Page);
 
 Page.propTypes = {
+  className: PropTypes.string,
   children: PropTypes.node,
 };
 
 Page.Container = styled.div`
-  margin: 2rem;
+  padding: 2rem;
 `;

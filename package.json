@@ -6,8 +6,8 @@
   "author": "alex baldwin <webmaster@cubegho.st>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack"
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode production"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
@@ -37,12 +37,14 @@
   },
   "dependencies": {
     "@loadable/component": "^5.12.0",
+    "@popperjs/core": "^2.4.2",
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet-async": "^1.0.6",
     "react-markdown": "^4.3.1",
+    "react-popper": "^2.2.3",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.1.1"

@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { has } from 'lodash';
 
-const renderNode = node => (
+const renderNode = (node, index) => (
   has(node, 'root') ? (
-    <Tree.Node>
+    <Tree.Node key={index}>
       <Tree.Label>{node.root}</Tree.Label>
       <Tree.Nodes>{node.nodes.map(renderNode)}</Tree.Nodes>
     </Tree.Node>
   ) : (
-    <Tree.Node>
+    <Tree.Node key={index}>
       <Tree.Label>{node}</Tree.Label>
     </Tree.Node>
   )
@@ -29,7 +29,7 @@ export default React.memo(Tree);
 
 Tree.propTypes = {
   root: PropTypes.node,
-  nodes: PropTypes.arrayOf(Tree.propTypes),
+  nodes: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object, PropTypes.node])),
 };
 
 Tree.Container = styled.div``;
@@ -80,7 +80,7 @@ Tree.Node = styled.li`
 
   &:before {
     width: 1.1em;
-    height: 1em;
+    height: 1.05em;
     vertical-align: top;
     border-bottom: 1px solid #000;
     content: '';

@@ -129,7 +129,7 @@ const LinkableHeading = ({ level, children }) => {
   }
 };
 LinkableHeading.propTypes = {
-  level: PropTypes.string,
+  level: PropTypes.number,
   children: PropTypes.node,
 };
 LinkableHeading.Heading = styled.div`
