@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 
 import tutorial from './tutorial.md';
 import { Helmet } from 'react-helmet-async';
+
 
 const Tutorial = () => (
   <Tutorial.Container>
@@ -14,6 +16,11 @@ const Tutorial = () => (
     <ReactMarkdown
       source={tutorial}
       escapeHtml={false}
+      linkTarget="_blank"
+      renderers={{
+        heading: LinkableHeading,
+        image: Image,
+      }}
     />
   </Tutorial.Container>
 );
@@ -39,6 +46,10 @@ Tutorial.Container = styled.div`
     display: table;
     margin-top: 1.5rem;
     border-bottom: 3px solid ${lightPurple};
+  }
+  h4, h5 {
+    font-weight: bold;
+    margin-top: 1.5rem;
   }
 
   p, ul, blockquote {
@@ -77,6 +88,10 @@ Tutorial.Container = styled.div`
   }
   ul li {
     padding-left: 0.5rem;
+    margin: 0.25rem 0;
+  }
+  li img {
+    margin-top: 0.5rem;
   }
 
   hr {
@@ -87,10 +102,55 @@ Tutorial.Container = styled.div`
     content: '-------------------------------------------------------------------------------------------------------------------------';
     color: transparent;
     text-decoration-line: line-through;
-    text-decoration-color: ${lightPurple};
+    text-decoration-color: #dddddd;
     text-decoration-style: wavy;
     font-size: 24px;
     overflow: hidden;
     white-space: nowrap;
   }
 `;
+
+
+const LinkableHeading = ({ level, children }) => {
+  const Tag = `h${level}`;
+  const id = React.Children.map(children, child => (
+    child.props.value.toLowerCase().replace(/([^a-z0-9\s]+)/g, '').trim().replace(/\s/g, '-')
+  )).join('_');
+
+  if (level === 1) {
+    return <Tag>{children}</Tag>;
+  } else {
+    return (
+      <LinkableHeading.Heading as={Tag} id={id}>
+        {children}
+        <LinkableHeading.Link href={`#${id}`}>#</LinkableHeading.Link>
+      </LinkableHeading.Heading>
+    );
+  }
+};
+LinkableHeading.propTypes = {
+  level: PropTypes.string,
+  children: PropTypes.node,
+};
+LinkableHeading.Heading = styled.div`
+  position: relative;
+`;
+LinkableHeading.Link = styled.a`
+  position: absolute;
+  color: lightgray !important;
+  text-decoration: none;
+  padding: 0 0.5rem;
+  visibility: hidden;
+  font-family: 'Roboto Mono', monospace;
+
+  ${LinkableHeading.Heading}:hover & {
+    visibility: visible;
+  }
+`;
+
+const Image = ({ src }) => (
+  <img src={/^https?:\/\//.test(src) ? src : require(`./assets/${src}`).default} />
+);
+Image.propTypes = {
+  src: PropTypes.string,
+};

@@ -15,8 +15,11 @@ module.exports = (api) => {
       }],
       '@babel/plugin-syntax-dynamic-import',
       isNode && 'babel-plugin-dynamic-import-node',
+      'babel-plugin-lodash',
       '@loadable/babel-plugin',
-      'babel-plugin-styled-components',
+      ['babel-plugin-styled-components', {
+        ssr: true,
+      }],
     ].filter(Boolean),
   };
 };

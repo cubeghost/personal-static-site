@@ -59,7 +59,6 @@ module.exports = () => {
         publicPath: '/',
       },
       devServer: {
-        hot: true,
         port: 3000,
         contentBase: './dist',
         historyApiFallback: true,
@@ -104,6 +103,7 @@ module.exports = () => {
           paths: [
             '/',
             '/kidpix',
+            '/kidpix/zine',
             '/kidpix/tutorial',
           ],
           locals: {},
