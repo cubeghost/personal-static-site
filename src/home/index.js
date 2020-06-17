@@ -20,7 +20,7 @@ const Home = () => (
         >
           <ExternalLink href="https://ephemeral-presence.glitch.me/">
             ephemeral web presence space
-          </ExternalLink>
+          </ExternalLink>,2019
         </Preview>,
         {
           root: (
@@ -50,9 +50,17 @@ const Home = () => (
           content={<img src={require('./assets/plants.gif').default} />}
           key="plants-exe"
         >
-          <ExternalLink href="https://codepen.io/cubeghost/full/xEJVZx" key="plants-exe">
+          <ExternalLink href="https://codepen.io/cubeghost/full/xEJVZx">
             plants.exe
           </ExternalLink> for procgen 2016
+        </Preview>,
+        <Preview
+          content={<img src={require('./assets/kaleidoscope.gif').default} />}
+          key="kaleidoscope"
+        >
+          <ExternalLink href="https://codepen.io/cubeghost/full/GooRZj">
+            three.js kaleidoscope tool
+          </ExternalLink>, 2015
         </Preview>,
         {
           root: 'tumblr',
@@ -77,6 +85,14 @@ const Home = () => (
             },
           ],
         },
+        <Preview
+          content={<img src={require('./assets/secretbase.png').default} />}
+          key="secret-base"
+        >
+          <ExternalLink href="https://archive.cubegho.st/secretbase/">
+            hoenn secret base designer
+          </ExternalLink>,2014~2018
+        </Preview>,
       ]}
     />
     <br /><br /><br />
@@ -103,10 +119,15 @@ const Home = () => (
 export default React.memo(Home);
 
 Home.Page = styled(Page)`
+  width: 100%;
   max-width: 40rem;
   margin: 0 auto;
 
   a {
     color: blue;
+  }
+
+  @media screen and (max-width: 480px) {
+    overflow: hidden;
   }
 `;

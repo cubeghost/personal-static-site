@@ -24,7 +24,7 @@ const Preview = ({ content, children, border }) => {
       {
         name: 'offset',
         options: {
-          offset: [0, 8],
+          offset: [0, 24],
         },
       },
     ],
@@ -73,7 +73,7 @@ Preview.defaultProps = {
 };
 
 Preview.Container = styled.div`
-  margin: 0 1rem;
+  /* margin: 0 1rem; */
   border: ${p => p.hasBorder && '1px solid #000'};
   opacity: ${p => p.isVisible ? 1 : 0};
   z-index: 10;

@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import {range} from 'lodash';
+import { range } from 'lodash';
+import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
+
 
 const pages = range(0, 15).map(number => (
   require(`./assets/zine/${String(number).padStart(2, '0')}.png`).default
@@ -8,11 +11,20 @@ const pages = range(0, 15).map(number => (
 
 const Zine = () => (
   <Zine.Container>
-    {pages.map((page, index) => (
-      <Zine.Page key={index}>
-        <img src={page} />
-      </Zine.Page>
-    ))}
+    <Helmet>
+      <title>kid pix 1.0: a zine</title>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+    </Helmet>
+    <Zine.Back>
+      <Link to="/">← cubegho.st</Link>
+    </Zine.Back>
+    <Zine.Pages>
+      {pages.map((page, index) => (
+        <Zine.Page key={index}>
+          <img src={page} />
+        </Zine.Page>
+      ))}
+    </Zine.Pages>
     <Zine.Description>
       <p>
         this is a zine i wrote in 2014, created entirely in kid pix 1.0.
@@ -32,14 +44,30 @@ export default React.memo(Zine);
 const imageWidth = '473px';
 
 Zine.Container = styled.div`
+  font-family: 'Roboto Mono', monospace;
   max-width: calc(${imageWidth} + 2rem + 2px);
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
   margin: 2rem auto;
 
   @media screen and (min-width: 1013px) {
     max-width: calc(((${imageWidth} + 2rem + 1px) * 2) + 1px);
+  }
+`;
+
+Zine.Back = styled.div`
+  a {
+    color: #444;
+    text-decoration: none;
+    font-size: 0.8rem;
+  }
+`;
+
+Zine.Pages = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+
+  @media screen and (min-width: 1013px) {
     margin-top: 20vh;
   }
 `;

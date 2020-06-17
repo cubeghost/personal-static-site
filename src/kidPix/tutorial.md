@@ -100,6 +100,6 @@ While this is the most complete copy of Kid Pix Studio Deluxe I've been able to 
 
 ---
 
-Did these instructions work? Show me what you made! Did they not work? Tell me what broke. I'm [@cubeghost](https://twitter.com/cubeghost) on Twitter.
+Did these instructions work? Show me what you made! Did they not work? Tell me what broke. I'm [@cubeghost](https://twitter.com/cubeghost) on Twitter, and the source of this article [is on Github](https://github.com/cubeghost/personal-static-site/blob/development/src/kidPix/tutorial.md). 
 
 ![a picture of my cats I edited in Kid Pix](tutorial/kitties.gif)

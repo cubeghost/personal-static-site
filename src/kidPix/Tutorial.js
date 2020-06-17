@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
+import { Link } from 'react-router-dom';
 
 import tutorial from './tutorial.md';
 import { Helmet } from 'react-helmet-async';
@@ -12,7 +13,11 @@ const Tutorial = () => (
     <Helmet>
       <title>Kid Pix Studio Deluxe on macOS</title>
       <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
     </Helmet>
+    <Tutorial.Back>
+      <Link to="/">← cubegho.st</Link>
+    </Tutorial.Back>
     <ReactMarkdown
       source={tutorial}
       escapeHtml={false}
@@ -107,6 +112,15 @@ Tutorial.Container = styled.div`
     font-size: 24px;
     overflow: hidden;
     white-space: nowrap;
+  }
+`;
+
+Tutorial.Back = styled.div`
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.8rem;
+
+  a {
+    text-decoration: none;
   }
 `;
 
