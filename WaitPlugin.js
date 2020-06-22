@@ -5,7 +5,7 @@ const fs = require('fs');
  * https://www.viget.com/articles/run-multiple-webpack-configs-sequentially/
  */
 module.exports = class WaitPlugin extends WebpackBeforeBuildPlugin {
-  constructor(file, interval = 100, timeout = 10000) {
+  constructor(file, interval = 100, timeout = 30000) {
     super((_stats, callback) => {
       const start = Date.now();
 
