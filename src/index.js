@@ -25,6 +25,7 @@ const Index = ({ path }) => {
           <Route exact path="/" component={HomePage} />
           <Route path="/kidpix" component={KidPixPage} />
           <Route path="/not-found" component={NotFoundPage} />
+          <Route component={NotFoundPage} />
         </Switch>
       </Router>
     </>
