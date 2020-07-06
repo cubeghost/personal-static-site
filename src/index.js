@@ -8,6 +8,7 @@ import StyleReset from './style/reset';
 
 const HomePage = loadable(() => import('./home'));
 const KidPixPage = loadable(() => import('./kidPix'));
+const NotFoundPage = loadable(() => import('./home/notFound'));
 
 const Index = ({ path }) => {
   const isBrowser = (typeof window !== 'undefined');
@@ -23,6 +24,7 @@ const Index = ({ path }) => {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/kidpix" component={KidPixPage} />
+          <Route path="/not-found" component={NotFoundPage} />
         </Switch>
       </Router>
     </>

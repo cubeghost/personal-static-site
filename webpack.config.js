@@ -1,6 +1,7 @@
 const path = require('path');
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 const LoadablePlugin = require('@loadable/webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const WaitPlugin = require('./WaitPlugin');
 
 const resolve = {
@@ -105,8 +106,17 @@ module.exports = [
           '/kidpix',
           '/kidpix/zine',
           '/kidpix/tutorial',
+          '/not-found',
         ],
         locals: {},
+      }),
+      new CopyPlugin({
+        patterns: [
+          {
+            from: path.resolve(__dirname, 'dist/not-found/index.html'),
+            to: path.resolve(__dirname, 'dist/404.html'),
+          },
+        ],
       }),
     ],
   },
