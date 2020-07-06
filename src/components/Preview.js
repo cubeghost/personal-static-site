@@ -73,7 +73,6 @@ Preview.defaultProps = {
 };
 
 Preview.Container = styled.div`
-  /* margin: 0 1rem; */
   border: ${p => p.hasBorder && '1px solid #000'};
   opacity: ${p => p.isVisible ? 1 : 0};
   z-index: 10;
@@ -86,9 +85,4 @@ Preview.Container = styled.div`
   }
 `;
 
-Preview.Arrow = styled.div`
-  /* width: 1rem;
-  height: 0;
-  border-bottom: 1px solid black;
-  left: -1rem; */
-`;
+Preview.Arrow = styled.div``;

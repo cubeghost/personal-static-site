@@ -16,7 +16,9 @@ const Index = ({ path }) => {
   return (
     <>
       <StyleReset />
-      <Helmet defaultTitle="cubegho.st" titleTemplate="%s | cubegho.st" />
+      <Helmet defaultTitle="cubegho.st" titleTemplate="%s | cubegho.st">
+        <script async defer data-domain="cubegho.st" src="https://plausible.io/js/plausible.js" />
+      </Helmet>
       <Router location={path}>
         <Switch>
           <Route exact path="/" component={HomePage} />

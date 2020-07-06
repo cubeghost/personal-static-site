@@ -38,6 +38,7 @@ export default function prerender(locals) {
       ${styleTags}
       ${scriptTags}
       ${linkTags}
+      ${helmet.script.toString()}
     </head>
     <body>
       <div id="react-root" data-path="${locals.path}">${html}</div>
