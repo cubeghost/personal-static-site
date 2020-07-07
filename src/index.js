@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { BrowserRouter, StaticRouter, Switch, Route } from 'react-router-dom';
 
 import StyleReset from './style/reset';
+import Favicon from './assets/favicon.ico';
 
 const HomePage = loadable(() => import('./home'));
 const KidPixPage = loadable(() => import('./kidPix'));
@@ -18,6 +19,11 @@ const Index = ({ path }) => {
     <>
       <StyleReset />
       <Helmet defaultTitle="cubegho.st" titleTemplate="%s | cubegho.st">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="icon" type="image/x-icon" href={Favicon} />
+
         <script async defer data-domain="cubegho.st" src="https://plausible.io/js/plausible.js" />
       </Helmet>
       <Router location={path}>

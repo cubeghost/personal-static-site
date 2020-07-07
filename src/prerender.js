@@ -30,18 +30,19 @@ export default function prerender(locals) {
   sheet.seal();
 
   return `<!doctype html>
-    <head>
-      ${helmet.title.toString()}
-      ${helmet.meta.toString()}
-      ${helmet.link.toString()}
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      ${styleTags}
-      ${scriptTags}
-      ${linkTags}
-      ${helmet.script.toString()}
-    </head>
-    <body>
-      <div id="react-root" data-path="${locals.path}">${html}</div>
-    </body>
+    <html lang="en">
+      <head>
+        ${helmet.title.toString()}
+        ${helmet.meta.toString()}
+        ${styleTags}
+        ${helmet.link.toString()}
+        ${linkTags}
+        ${scriptTags}
+        ${helmet.script.toString()}
+      </head>
+      <body>
+        <div id="react-root" data-path="${locals.path}">${html}</div>
+      </body>
+    </html>
   `;
 }

@@ -15,7 +15,7 @@ const Home = () => (
       root="~/cubeghost"
       nodes={[
         <Preview
-          content={<img src={require('./assets/ephemeral.gif').default} />}
+          content={<img src={require('./assets/ephemeral.gif').default} alt="screenshot gif of 'ephemeral web presence space'" />}
           key="ephemeral-presence"
         >
           <ExternalLink href="https://ephemeral-presence.glitch.me/">
@@ -25,7 +25,7 @@ const Home = () => (
         {
           root: (
             <Preview
-              content={<img src={require('./assets/kidpix.png').default} width="32" />}
+              content={<img src={require('./assets/kidpix.png').default} width="32" alt="kix pix studio deluxe icon" />}
               border={false}
             >
               kid pix
@@ -34,7 +34,7 @@ const Home = () => (
           nodes: [
             <Link to="/kidpix/tutorial" key="kidpix-tutorial">emulation tutorial</Link>,
             <Preview
-              content={<img src={require('./assets/zine.png').default} />}
+              content={<img src={require('./assets/zine.png').default} alt="a page from my kix pix 1.0 zine" />}
               key="kidpix-zine"
             >
               <Link to="/kidpix/zine">1.0 zine</Link>,2014
@@ -47,7 +47,7 @@ const Home = () => (
           ],
         },
         <Preview
-          content={<img src={require('./assets/plants.gif').default} />}
+          content={<img src={require('./assets/plants.gif').default} alt="gif showing procedurally generated potted plants" />}
           key="plants-exe"
         >
           <ExternalLink href="https://codepen.io/cubeghost/full/xEJVZx">
@@ -55,7 +55,7 @@ const Home = () => (
           </ExternalLink> for procgen 2016
         </Preview>,
         <Preview
-          content={<img src={require('./assets/kaleidoscope.gif').default} />}
+          content={<img src={require('./assets/kaleidoscope.gif').default} alt="gif showing kaleidoscopes made with a three.js tool" />}
           key="kaleidoscope"
         >
           <ExternalLink href="https://codepen.io/cubeghost/full/GooRZj">
@@ -86,7 +86,7 @@ const Home = () => (
           ],
         },
         <Preview
-          content={<img src={require('./assets/secretbase.png').default} />}
+          content={<img src={require('./assets/secretbase.png').default} alt="screenshot of 'hoenn secret base designer'" />}
           key="secret-base"
         >
           <ExternalLink href="https://archive.cubegho.st/secretbase/">
@@ -125,9 +125,5 @@ Home.Page = styled(Page)`
 
   a {
     color: blue;
-  }
-
-  @media screen and (max-width: 480px) {
-    overflow: hidden;
   }
 `;

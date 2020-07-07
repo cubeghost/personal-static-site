@@ -7,9 +7,14 @@
   "plugins": [
     "react",
     "react-hooks",
+    "jsx-a11y",
     "import"
   ],
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
   "rules": {
     "indent": ["error", 2],
     "quotes": ["error", "single", {"avoidEscape": true}],

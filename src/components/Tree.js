@@ -68,6 +68,7 @@ Tree.Node = styled.li`
   margin-left: 0.35em;
   padding: 0.2em 0;
   border-left: 1px solid #000;
+  white-space: nowrap;
 
   &:first-child {
     padding-top: 0.6em;
