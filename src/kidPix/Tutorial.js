@@ -162,9 +162,10 @@ LinkableHeading.Link = styled.a`
   }
 `;
 
-const Image = ({ src }) => (
-  <img src={/^https?:\/\//.test(src) ? src : require(`./assets/${src}`).default} />
+const Image = ({ src, alt }) => (
+  <img src={/^https?:\/\//.test(src) ? src : require(`./assets/${src}`).default} alt={alt} />
 );
 Image.propTypes = {
   src: PropTypes.string,
+  alt: PropTypes.string,
 };

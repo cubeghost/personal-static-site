@@ -76,6 +76,7 @@ Preview.Container = styled.div`
   border: ${p => p.hasBorder && '1px solid #000'};
   opacity: ${p => p.isVisible ? 1 : 0};
   z-index: 10;
+  pointer-events: none;
 
   img {
     max-width: 16rem;
