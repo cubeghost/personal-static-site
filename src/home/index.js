@@ -32,7 +32,7 @@ const Home = () => (
             </Preview>
           ),
           nodes: [
-            <Link to="/kidpix/tutorial" key="kidpix-tutorial">emulation tutorial</Link>,
+            <Link to="/kidpix/tutorial" key="kidpix-tutorial">studio deluxe emulation tutorial</Link>,
             <Preview
               content={<img src={require('./assets/zine.png').default} alt="a page from my kix pix 1.0 zine" />}
               key="kidpix-zine"
@@ -41,7 +41,7 @@ const Home = () => (
             </Preview>,
             <>
               <ExternalLink href="https://slides.com/cubeghost/kidpix" key="kidpix-talk">
-                slides
+                queens.js slides
               </ExternalLink>,2016
             </>,
           ],
@@ -55,12 +55,12 @@ const Home = () => (
           </ExternalLink> for procgen 2016
         </Preview>,
         <Preview
-          content={<img src={require('./assets/kaleidoscope.gif').default} alt="gif showing kaleidoscopes made with a three.js tool" />}
+          content={<img src={require('./assets/kaleidoscope_2.gif').default} alt="gif showing kaleidoscopes made with a three.js tool" />}
           key="kaleidoscope"
         >
-          <ExternalLink href="https://codepen.io/cubeghost/full/GooRZj">
+          <ExternalLink href="https://csb-4n9by.netlify.app/">
             three.js kaleidoscope tool
-          </ExternalLink>, 2015
+          </ExternalLink>,2015~2020
         </Preview>,
         {
           root: 'tumblr',

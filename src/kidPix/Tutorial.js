@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
 
-import tutorial from './tutorial.md';
+import tutorial from './assets/tutorial/tutorial.md';
 import { Helmet } from 'react-helmet-async';
 
 
@@ -163,7 +163,7 @@ LinkableHeading.Link = styled.a`
 `;
 
 const Image = ({ src, alt }) => (
-  <img src={/^https?:\/\//.test(src) ? src : require(`./assets/${src}`).default} alt={alt} />
+  <img src={/^https?:\/\//.test(src) ? src : require(`./assets/tutorial/${src}`).default} alt={alt} />
 );
 Image.propTypes = {
   src: PropTypes.string,
