@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "index.js",
   "repository": "https://github.com/cubeghost/personal-static-site.git",
-  "author": "alex baldwin <webmaster@cubegho.st>",
+  "author": "alex baldwin <mail@cubegho.st>",
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --mode development",

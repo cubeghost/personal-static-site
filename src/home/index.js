@@ -108,7 +108,7 @@ const Home = () => (
         <ExternalLink href="https://twitter.com/cubeghost" key="twitter">
           twitter
         </ExternalLink>,
-        <ExternalLink href="mailto:webmaster@cubegho.st" key="email">
+        <ExternalLink href="mailto:mail@cubegho.st" key="email">
           e-mail
         </ExternalLink>,
       ]}
