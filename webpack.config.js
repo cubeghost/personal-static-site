@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 const LoadablePlugin = require('@loadable/webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
@@ -8,7 +9,11 @@ const resolve = {
   modules: [path.resolve(__dirname, 'src'), 'node_modules'],
 };
 
-const plugins = [];
+const plugins = [
+  new webpack.EnvironmentPlugin({
+    URL: 'http://localhost:3000',
+  }),
+];
 
 const rules = [
   {

@@ -97,6 +97,14 @@ Tree.Node = styled.li`
     margin-top: 0.4em;
   }
 
+  &:only-child:before {
+    padding-top: 0.6em;
+  }
+
+  &:only-child > ${Tree.Label} {
+    margin-top: 0.8em;
+  }
+
   /* &:hover > ${Tree.Label}:after,
   &:hover ${Tree.Label}:after {
     content: '';

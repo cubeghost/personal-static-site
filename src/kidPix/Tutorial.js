@@ -14,8 +14,10 @@ const Tutorial = () => (
       <title>Kid Pix Studio Deluxe on macOS</title>
       <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+      <meta name="og:title" content="Kid Pix Studio Deluxe on macOS | cubegho.st" />
+      <meta name="og:image" content={process.env.URL + require('./assets/tutorial/splash.png').default} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content={require('./assets/tutorial/splash.png').default} />
+      <meta name="twitter:image" content={process.env.URL + require('./assets/tutorial/splash.png').default} />
     </Helmet>
     <Tutorial.Back>
       <Link to="/">← cubegho.st</Link>
