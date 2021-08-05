@@ -13,11 +13,11 @@ const Home = () => (
     <br /><br /><br />
     <Tree label="~/cubeghost" root>
       <Preview
-        content={<img src={require('./assets/ephemeral.gif').default} alt="screenshot gif of 'ephemeral web presence space'" />}
+        content={<img src={require('./assets/afffirmations.png').default} alt="screenshot of the '@afffirmations generator' user interface showing a preview on one side and inputs on the other" />}
       >
-        <ExternalLink href="https://ephemeral-presence.glitch.me/">
-          ephemeral web presence space
-        </ExternalLink>,2019
+        <ExternalLink href="https://afffirmations.glitch.me/">
+          @afffirmations generator
+        </ExternalLink>,2021
       </Preview>
       <Tree label={(
         <Preview
@@ -37,6 +37,13 @@ const Home = () => (
           </ExternalLink>,2016
         </>
       </Tree>
+      <Preview
+        content={<img src={require('./assets/ephemeral.gif').default} alt="screenshot gif of 'ephemeral web presence space'" />}
+      >
+        <ExternalLink href="https://ephemeral-presence.glitch.me/">
+          ephemeral web presence space
+        </ExternalLink>,2019
+      </Preview>
       <Preview content={<img src={require('./assets/plants.gif').default} alt="gif showing procedurally generated potted plants" />}>
         <ExternalLink href="https://codepen.io/cubeghost/full/xEJVZx">
           plants.exe
