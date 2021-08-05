@@ -9,12 +9,9 @@ const NotFound = () => (
   <NotFound.Page>
     <h1>⟡*·_</h1>
     <br /><br /><br />
-    <Tree
-      root="> No such file or directory 😰"
-      nodes={[
-        <Link to="/" key="home">cd ~/cubeghost</Link>,
-      ]}
-    />
+    <Tree root label="> No such file or directory 😰">
+      <Link to="/" key="home">cd ~/cubeghost</Link>
+    </Tree>
   </NotFound.Page>
 );
 

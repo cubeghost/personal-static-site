@@ -1,40 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { has } from 'lodash';
 
-const renderNode = (node, index) => (
-  has(node, 'root') ? (
-    <Tree.Node key={index}>
-      <Tree.Label>{node.root}</Tree.Label>
-      <Tree.Nodes>{node.nodes.map(renderNode)}</Tree.Nodes>
-    </Tree.Node>
-  ) : (
-    <Tree.Node key={index}>
-      <Tree.Label>{node}</Tree.Label>
-    </Tree.Node>
-  )
+const Node = ({children}) => (
+  <Tree.Node>
+    <Tree.Label>{children}</Tree.Label>
+  </Tree.Node>
 );
 
-const Tree = ({root, nodes}) => (
-  <Tree.Container>
-    <Tree.Label>{root}</Tree.Label>
-    <Tree.Nodes>
-      {nodes.map(renderNode)}
-    </Tree.Nodes>
-  </Tree.Container>
-);
-
-export default React.memo(Tree);
-
-Tree.propTypes = {
-  root: PropTypes.node,
-  nodes: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object, PropTypes.node])),
+Node.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
-Tree.Container = styled.div``;
+const Tree = ({root = false, label, children}) => {
+  const RootComponent = root ? Tree.Container : Tree.Node;
+  return (
+    <RootComponent>
+      {label && <Tree.Label>{label}</Tree.Label>}
+      <Tree.Nodes>
+        {React.Children.map(children, child => (
+          child.type === Tree ? child : <Node>{child}</Node>
+        ))}
+      </Tree.Nodes>
+    </RootComponent>
+  );
+};
 
-Tree.Root = styled.div``;
+Tree.propTypes = {
+  root: PropTypes.bool,
+  label: PropTypes.node,
+  children: PropTypes.node.isRequired,
+};
+
+export default Tree;
+
+Tree.Container = styled.div``;
 
 Tree.Label = styled.span`
   display: inline-block;

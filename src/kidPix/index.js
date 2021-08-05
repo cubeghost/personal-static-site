@@ -19,32 +19,31 @@ const KidPix = () => {
       <Route exact path={path}>
         <KidPix.Page>
           <Tree
-            root="~/cubeghost"
-            nodes={[{
-              root: (
-                <Preview
-                  content={<img src={require('../home/assets/kidpix.png').default} width="32" alt="kix pix studio deluxe icon" />}
-                  border={false}
-                >
-                  kid pix
-                </Preview>
-              ),
-              nodes: [
-                <Link to="/kidpix/tutorial" key="kidpix-tutorial">studio deluxe emulation tutorial</Link>,
-                <Preview
-                  content={<img src={require('../home/assets/zine.png').default} alt="a page from my kix pix 1.0 zine" />}
-                  key="kidpix-zine"
-                >
-                  <Link to="/kidpix/zine">1.0 zine</Link>,2014
-                </Preview>,
-                <>
-                  <ExternalLink href="https://slides.com/cubeghost/kidpix" key="kidpix-talk">
-                    queens.js slides
-                  </ExternalLink>,2016
-                </>,
-              ],
-            }]}
-          />
+            root
+            label="~/cubeghost"
+          >
+            <Tree label={(
+              <Preview
+                content={<img src={require('../home/assets/kidpix.png').default} width="32" alt="kix pix studio deluxe icon" />}
+                border={false}
+              >
+                kid pix
+              </Preview>
+            )}>
+              <Link to="/kidpix/tutorial">studio deluxe emulation tutorial</Link>
+              <Preview
+                content={<img src={require('../home/assets/zine.png').default} alt="a page from my kix pix 1.0 zine" />}
+                key="kidpix-zine"
+              >
+                <Link to="/kidpix/zine">1.0 zine</Link>,2014
+              </Preview>
+              <>
+                <ExternalLink href="https://slides.com/cubeghost/kidpix">
+                  queens.js slides
+                </ExternalLink>,2016
+              </>
+            </Tree>
+          </Tree>
         </KidPix.Page>
       </Route>
       <Route path={`${path}/zine`} component={Zine} />
