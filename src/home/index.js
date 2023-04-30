@@ -88,6 +88,9 @@ const Home = () => (
       <ExternalLink href="https://codepen.io/cubeghost">
         codepen
       </ExternalLink>
+      <ExternalLink href="https://4-dimensional-render.tumblr.com">
+        visuals
+      </ExternalLink>
       <ExternalLink href="https://twitter.com/cubeghost">
         twitter
       </ExternalLink>
