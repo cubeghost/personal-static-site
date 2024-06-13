@@ -72,7 +72,7 @@ const Home = () => (
         </Tree>
       </Tree>
       <Preview content={<img src={require('./assets/secretbase.png').default} alt="screenshot of 'hoenn secret base designer'" />}>
-        <ExternalLink href="https://archive.cubegho.st/secretbase/">
+        <ExternalLink href="https://secretbase.cubegho.st/">
           hoenn secret base designer
         </ExternalLink>,2014~2018
       </Preview>
