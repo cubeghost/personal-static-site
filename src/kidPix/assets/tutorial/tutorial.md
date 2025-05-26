@@ -20,11 +20,11 @@ The emulator we'll use to imitate Mac OS 9 is called SheepShaver. It's got a cut
 ![cute SheepShaver icon](sheepshaver_icon.png)
 
 ### 💾 Downloads
-- [SheepShaver](http://ronaldpr.home.xs4all.nl/sheepshaverforum/SheepShaver_2.5_20190504.zip)
-- [SheepShaver folder](http://ronaldpr.home.xs4all.nl/sheepshaverforum/SheepShaver_folder.zip)
-- ["New World" PPC ROM](http://www.redundantrobot.com/sheepshaver_files/roms/newworld86.rom.zip)
-- [Bootable Mac OS 9 disk image](http://www.redundantrobot.com/sheepshaver_files/disk_images/OS9.img)
-- [Kid Pix Studio Deluxe install disk image](https://www.myabandonware.com/media/files/games/k/kid-pix-studio-deluxe_mac_03tz.zip)
+- [SheepShaver](https://www.emaculation.com/forum/viewtopic.php?f=20&t=7360) ([February 2024 build](https://www.emaculation.com/sheepshaver/SheepShaver_universal_20240228.zip))
+- [SheepShaver folder](https://www.emaculation.com/forum/viewtopic.php?f=20&t=7360) ([February 2024 build](https://www.emaculation.com/sheepshaver/SheepShaver_folder_20240213.zip))
+- ["New World" PPC ROM](https://smb4.s3.us-west-2.amazonaws.com/sheepshaver/apple_roms/newworld86.rom.zip)
+- [Bootable Mac OS 9 disk image](https://mega.nz/file/dYNRgYJI#ORyKoSe357qdAX3m-4elr1MEl8hJHZy_L4tGiGoZEhM)
+- [Kid Pix Studio Deluxe install disk image](https://www.myabandonware.com/game/kid-pix-studio-deluxe-3lt#Mac)
 - [MacinTalk installer](https://www.macintoshrepository.org/2590-macintalk#d4277)
 
 *Big props to [Redundant Robot](http://www.redundantrobot.com/#/sheepshaver) for providing the OS 9 disk image and ROM.*
