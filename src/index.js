@@ -23,8 +23,6 @@ const Index = ({ path }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <link rel="icon" type="image/x-icon" href={Favicon} />
-
-        <script async defer data-domain="cubegho.st" src="https://plausible.io/js/plausible.js" />
       </Helmet>
       <Router location={path}>
         <Switch>

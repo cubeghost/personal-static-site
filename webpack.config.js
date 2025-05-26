@@ -124,6 +124,12 @@ module.exports = [
                 destination: path.resolve(__dirname, 'dist/404.html'),
               },
             ],
+            copy: [
+              {
+                source: path.resolve(__dirname, 'static/**/*'), 
+                destination: path.resolve(__dirname, 'dist/')
+              }
+            ],
           },
         ],
       }),

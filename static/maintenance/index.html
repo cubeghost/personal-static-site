@@ -1,0 +1,2425 @@
+<!DOCTYPE html>
+<html style=--page-reference-width:700;--page-reference-width-px:700px>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<title>RFC: maintenance dinners</title>
+<meta property=og:title content="RFC: maintenance dinners">
+<meta name=twitter:title content="RFC: maintenance dinners">
+<meta name=description
+  content="we can work towards our own technical infrastructures by first forming the social infrastructure and practicing maintenance in all its forms">
+<meta name=twitter:description
+  content="we can work towards our own technical infrastructures by first forming the social infrastructure and practicing maintenance in all its forms">
+<meta property=og:image content="assets/og-image.jpeg">
+<meta name=twitter:card content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+  rel="stylesheet">
+<style>
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0
+  }
+
+  a,
+  abbr,
+  acronym,
+  address,
+  applet,
+  article,
+  aside,
+  audio,
+  b,
+  big,
+  blockquote,
+  body,
+  canvas,
+  caption,
+  center,
+  cite,
+  code,
+  dd,
+  del,
+  details,
+  dfn,
+  div,
+  dl,
+  dt,
+  em,
+  embed,
+  fieldset,
+  figcaption,
+  figure,
+  footer,
+  form,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  header,
+  hgroup,
+  html,
+  i,
+  iframe,
+  img,
+  ins,
+  kbd,
+  label,
+  legend,
+  li,
+  mark,
+  menu,
+  nav,
+  object,
+  ol,
+  output,
+  p,
+  pre,
+  q,
+  ruby,
+  s,
+  samp,
+  section,
+  small,
+  span,
+  strike,
+  strong,
+  sub,
+  summary,
+  sup,
+  table,
+  tbody,
+  td,
+  tfoot,
+  th,
+  thead,
+  time,
+  tr,
+  tt,
+  u,
+  ul,
+  var,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline
+  }
+
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block
+  }
+
+  body {
+    line-height: 1
+  }
+
+  ol,
+  ul {
+    list-style: none
+  }
+
+  blockquote,
+  q {
+    quotes: none
+  }
+
+  blockquote:after,
+  blockquote:before,
+  q:after,
+  q:before {
+    content: "";
+    content: none
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0
+  }
+
+  :root {
+    --base-font-size: 20px;
+    --margin: 16px;
+    --max-content-width-unitless: 600;
+    --max-content-width: 600px;
+    --min-content-width: 375px;
+    --max-desktop-content-width: 1366px;
+    --above-above-canvas-z-index: 2147483632;
+    --overlay-z-index: 2147483637;
+    --above-overlay-z-index: 2147483642;
+    --max-z-index: 2147483647;
+    --sans-serif-font: "NationalPark-Variable", "Inter", Arial, sans-serif;
+    --monospace-font: "Roboto Mono", monospace;
+    --code-font: "Fira Code", monospace
+  }
+
+  html {
+    --page-reference-width: var(--max-content-width-unitless);
+    --page-reference-width-px: var(--max-content-width-px);
+    --canvas-width: var(--override-canvas-width, 100vw);
+    --body-canvas-width: calc(var(--canvas-width) - var(--left-fixture-width-px, 0px) - var(--right-fixture-width-px, 0px));
+    font-size: min(calc(var(--body-canvas-width) / var(--page-reference-width)), 1px);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: var(--sans-serif-font);
+    height: 100%;
+    overflow-y: overlay
+  }
+
+  @media screen and (max-width:600px) {
+    html {
+      --canvas-width: var(--override-canvas-width, 100vw)
+    }
+  }
+
+  body {
+    font-size: var(--base-font-size);
+    height: -moz-fit-content;
+    height: fit-content;
+    max-width: 100vw;
+    overflow-x: hidden;
+    overflow-x: clip;
+    transition: background .1s ease-in-out
+  }
+
+  body,
+  button {
+    font-family: var(--sans-serif-font)
+  }
+
+  @media screen and (max-width:600px) {
+    :root {
+      --margin: 16px
+    }
+
+    .hide-on-mobile {
+      display: none !important
+    }
+  }
+
+  @media screen and (min-width:601px) {
+    .hide-on-desktop {
+      display: none !important
+    }
+  }
+
+  #next {
+    width: 100%;
+    height: 100%
+  }
+
+  .hide-powered-by-attribution #powered-by-attribution {
+    display: none !important
+  }
+
+  #powered-by-attribution {
+    text-transform: lowercase;
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: var(--max-z-index)
+  }
+
+  @media screen and (max-width:600px) {
+    #powered-by-attribution {
+      bottom: 16px;
+      left: 16px
+    }
+  }
+
+  #powered-by-attribution a {
+    text-indent: -9999px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: var(--above-above-canvas-z-index)
+  }
+
+  #powered-by-attribution span {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 148px;
+    left: 0;
+    font-weight: 700;
+    transition: all .15s ease-in-out;
+    opacity: 0;
+    pointer-events: none
+  }
+
+  #powered-by-attribution:hover span {
+    opacity: 1;
+    transform: translateY(-50%) translateX(68px)
+  }
+
+  #icon-logo {
+    --first-phase: 0.25s;
+    --delay: 0.1s;
+    --second-phase: 0.25s;
+    --third-phase: 0.25s;
+    display: block;
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    border-color: transparent;
+    opacity: 1 !important;
+    transition: .15s ease-in-out;
+    --attribution-border-color: hsla(0, 0%, 100%, .24);
+    filter: drop-shadow(1px 1px 0 var(--attribution-border-color)) drop-shadow(-1px 1px 0 var(--attribution-border-color)) drop-shadow(1px -1px 0 var(--attribution-border-color)) drop-shadow(-1px -1px 0 var(--attribution-border-color));
+    -webkit-filter: drop-shadow(1px 1px 0 var(--attribution-border-color)) drop-shadow(-1px 1px 0 var(--attribution-border-color)) drop-shadow(1px -1px 0 var(--attribution-border-color)) drop-shadow(-1px -1px 0 var(--attribution-border-color))
+  }
+
+  #icon-logo:hover svg {
+    transform: scale(1.2)
+  }
+
+  @media screen and (max-width:600px) {
+    .builder-app #powered-by-attribution {
+      display: none
+    }
+  }
+
+  .inline-rich-text {
+    display: inline-block;
+    font-size: calc(var(--font-size)*var(--rpx))
+  }
+
+  .inline-rich-text.left {
+    transform-origin: left
+  }
+
+  .inline-rich-text.center {
+    transform-origin: center
+  }
+
+  .inline-rich-text.right {
+    transform-origin: right
+  }
+
+  .inline-rich-text div[contenteditable] {
+    outline: none;
+    white-space: -moz-pre-space;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    user-select: text
+  }
+
+  .renderable-icon {
+    flex-shrink: 0;
+    height: calc(var(--height)*var(--rpx));
+    width: calc(var(--width)*var(--rpx));
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    display: flex
+  }
+
+  section[data-type=section] {
+    position: relative;
+    display: flex;
+    height: -moz-fit-content;
+    height: fit-content;
+    overflow: hidden
+  }
+
+  section[data-type=section] div[data-type=content] {
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    height: calc(var(--height)*var(--rpx));
+    max-width: calc(var(--max-width)*var(--parent-rpx));
+    box-sizing: border-box
+  }
+
+  div[data-type=group] {
+    position: relative;
+    width: calc(var(--width)*var(--rpx));
+    height: calc(var(--height)*var(--rpx));
+    z-index: var(--z)
+  }
+
+  .block[data-type=embed] div.size-normalizer>div,
+  div[data-embed=vimeo] .vimeo-player {
+    width: 100% !important;
+    height: 100% !important
+  }
+
+  div[data-embed=vimeo].write-mode .vimeo-player {
+    pointer-events: none
+  }
+
+  div[data-embed=vimeo] .vimeo-play-button {
+    width: 68px
+  }
+
+  div[data-embed=vimeo] .vimeo-play-button .ytp-large-play-button-bg {
+    transition: fill .1s cubic-bezier(.4, 0, 1, 1), fill-opacity .1s cubic-bezier(.4, 0, 1, 1);
+    fill: #212121;
+    fill-opacity: .8
+  }
+
+  @media not all and (hover:none) {
+    div[data-embed=vimeo]:hover:not(.write-mode) .youtube-play-button .ytp-large-play-button-bg {
+      transition: fill .1s cubic-bezier(.4, 0, 1, 1), fill-opacity .1s cubic-bezier(.4, 0, 1, 1);
+      fill: red;
+      fill-opacity: 1
+    }
+  }
+
+  div[data-embed=youtube] .youtube-player {
+    width: 100% !important;
+    height: 100% !important
+  }
+
+  div[data-embed=youtube].write-mode .youtube-player {
+    pointer-events: none
+  }
+
+  div[data-embed=youtube] .youtube-play-button {
+    width: 68px
+  }
+
+  div[data-embed=youtube] .youtube-play-button .ytp-large-play-button-bg {
+    transition: fill .1s cubic-bezier(.4, 0, 1, 1), fill-opacity .1s cubic-bezier(.4, 0, 1, 1);
+    fill: #212121;
+    fill-opacity: .8
+  }
+
+  @media not all and (hover:none) {
+    div[data-embed=youtube]:hover:not(.write-mode) .youtube-play-button .ytp-large-play-button-bg {
+      transition: fill .1s cubic-bezier(.4, 0, 1, 1), fill-opacity .1s cubic-bezier(.4, 0, 1, 1);
+      fill: red;
+      fill-opacity: 1
+    }
+  }
+
+  .block[data-type=button] .button {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6.4rem;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .08);
+    font-size: calc(var(--font-size)*var(--rpx))
+  }
+
+  .block[data-type=button] .button.light-bg {
+    color: #000
+  }
+
+  .block[data-type=button] .button.dark-bg {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, .24);
+    color: #fff
+  }
+
+  .block[data-type=button] .button.square span {
+    display: none
+  }
+
+  .block[data-type=button] .button span {
+    line-height: calc(var(--font-size)*var(--rpx)*1.5);
+    margin-left: calc(var(--font-size)*var(--rpx) + 27.6rem);
+    outline: none;
+    max-width: 80%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap
+  }
+
+  .block[data-type=button] .button.instagram-bg {
+    background: linear-gradient(45deg, #fda948 13%, #f66748 21%, #ec3653 64%, #c13a9c 84%)
+  }
+
+  .block[data-type=button] .button .icon-wrapper {
+    left: 27.6rem;
+    position: absolute;
+    width: calc(var(--font-size)*var(--rpx));
+    height: calc(var(--font-size)*var(--rpx))
+  }
+
+  .block[data-type=button] .button.dark-bg .icon-wrapper {
+    --drop-shadow: drop-shadow(1px 1px 2px rgba(0, 0, 0, .24));
+    filter: var(--drop-shadow);
+    -webkit-filter: var(--drop-shadow);
+    -moz-filter: var(--drop-shadow);
+    -o-filter: var(--drop-shadow);
+    -ms-filter: var(--drop-shadow)
+  }
+
+  .block[data-type=button] .button .icon {
+    width: 100%;
+    height: 100%;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: center center;
+    -webkit-mask-position: center center
+  }
+
+  .block[data-type=button] .button.light-bg .icon {
+    background-color: #000
+  }
+
+  .block[data-type=button] .button.dark-bg .icon {
+    background-color: #fff
+  }
+
+  .block[data-type=code-embed] .safe-mode-warning {
+    background: rgba(0, 0, 0, .64);
+    border: 1px solid hsla(0, 0%, 100%, .24);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 16px;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px)
+  }
+
+  .block[data-type=code-embed] .safe-mode-warning span {
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: hsla(0, 0%, 100%, .64);
+    display: block;
+    height: 44px;
+    width: 90px
+  }
+
+  .block[data-type=drawing] {
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+
+  .block[data-type=drawing],
+  .block[data-type=drawing] .block-content,
+  .block[data-type=drawing] svg {
+    overflow: visible !important
+  }
+
+  .block[data-type=drawing] svg {
+    width: 100%;
+    height: 100%
+  }
+
+  .block[data-type=gif] img,
+  .block[data-type=image] img {
+    width: 100%;
+    height: 100%;
+    color: transparent;
+    vertical-align: top
+  }
+
+  .block img:-moz-loading {
+    visibility: hidden
+  }
+
+  .block[data-type=rich-button] .button {
+    --dampening: max(min(0.7, calc(var(--padding) / 24)), 0.8);
+    --smart-padding: calc(var(--dampening) * var(--padding) * var(--rpx));
+    width: 100%;
+    height: 100%;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 var(--smart-padding);
+    gap: var(--smart-padding)
+  }
+
+  .block[data-type=rich-button] .button.icon-right {
+    flex-direction: row-reverse
+  }
+
+  .block[data-type=rich-button] .button.icon-left {
+    flex-direction: row
+  }
+
+  .block[data-type=rich-button] .button.dark-background .label {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, .24)
+  }
+
+  .block[data-type=rich-button] .button .label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    line-height: calc(var(--height)*var(--rpx))
+  }
+
+  .block[data-type=rich-button] .button .label.right {
+    text-align: right
+  }
+
+  .block[data-type=rich-button] .button .label.center {
+    text-align: center
+  }
+
+  .block[data-type=rich-button] .button .label.left {
+    text-align: left
+  }
+
+  .block[data-type=rich-button] .button.icon-none .icon {
+    display: none
+  }
+
+  .block[data-type=shape] svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0
+  }
+
+  .block[data-type=channel] .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-gap: 12px
+  }
+
+  .post {
+    background: #fff;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 0;
+    line-height: 1.4;
+    color: rgba(0, 0, 0, .87);
+    border: 1px solid rgba(0, 0, 0, .48);
+    border-radius: 4px;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, .16);
+    aspect-ratio: 4/3 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+  }
+
+  .post .footer {
+    font-size: 13px;
+    font-weight: 600;
+    text-align: right
+  }
+
+  @media screen and (max-width:800px) {
+    .post {
+      padding: 12px;
+      font-size: 13px
+    }
+  }
+
+  .mw_timestamp {
+    --timestamp-border-radius: 13px;
+    align-items: center;
+    background: #000;
+    border-radius: var(--timestamp-border-radius);
+    color: #fff;
+    display: inline-flex;
+    font-size: 11px;
+    height: 24px;
+    justify-content: center;
+    padding: 0 8px;
+    position: absolute;
+    bottom: 8px;
+    right: 8px
+  }
+
+  .mw_timestamp:not(.always-visible) {
+    visibility: hidden
+  }
+
+  .mw_timestamp:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    content: " ";
+    height: 100%;
+    border-radius: var(--timestamp-border-radius);
+    box-sizing: border-box;
+    border-color: hsla(0, 0%, 100%, .32) hsla(0, 0%, 100%, .2) hsla(0, 0%, 100%, .12) hsla(0, 0%, 100%, .28);
+    border-style: solid;
+    border-width: 1px
+  }
+
+  .block:hover .mw_timestamp.on-hover {
+    visibility: visible
+  }
+
+  .fixture {
+    position: relative;
+    flex-shrink: 0
+  }
+
+  #left-fixture .fixture-content {
+    position: fixed;
+    min-height: 100vh
+  }
+
+  #left-fixture .fixture-content .page-view {
+    min-height: 100vh
+  }
+
+  #right-fixture .fixture-content {
+    position: fixed;
+    min-height: 100vh
+  }
+
+  #right-fixture .fixture-content .page-view {
+    min-height: 100vh
+  }
+
+  @media screen and (max-width:800px) {
+
+    #left-fixture,
+    #right-fixture {
+      display: none
+    }
+
+    :root {
+      --left-fixture-width-px: 0px !important;
+      --right-fixture-width-px: 0px !important
+    }
+  }
+
+  .page-view {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    touch-action: manipulation
+  }
+
+  .page-view.autoresponsive {
+    --rpx: 1rem
+  }
+
+  .page-view:not(.autoresponsive) {
+    --rpx: 1px
+  }
+
+  html {
+    scroll-behavior: smooth
+  }
+
+  h1.hidden {
+    display: none
+  }
+
+  @media screen and (prefers-reduced-motion:reduce) {
+    html {
+      scroll-behavior: auto
+    }
+  }
+
+  .site-view {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%
+  }
+
+  .site-view .main-container {
+    width: 100%
+  }
+
+  @media(prefers-reduced-motion:no-preference) {
+
+    .block-content.with-animation.spin,
+    .mw_preview-box.with-animation.spin {
+      animation: spin 15s linear infinite
+    }
+
+    .block-content.with-animation.medallion,
+    .mw_preview-box.with-animation.medallion {
+      animation: medallion 10s linear infinite
+    }
+
+    .block-content.with-animation.tada,
+    .mw_preview-box.with-animation.tada {
+      animation: tada 2.5s linear infinite
+    }
+
+    .block-content.with-animation.wobble-alt,
+    .mw_preview-box.with-animation.wobble-alt {
+      animation: wobble-alt 2s linear infinite;
+      --wobble-alt-dampening: 0.3
+    }
+
+    .block-content.with-animation.bounce,
+    .mw_preview-box.with-animation.bounce {
+      animation: bounce 2s linear infinite
+    }
+
+    .block-content.with-animation.flash,
+    .mw_preview-box.with-animation.flash {
+      animation: flash 2s linear infinite
+    }
+
+    .block-content.with-animation.pulse,
+    .mw_preview-box.with-animation.pulse {
+      animation: pulse 2s linear infinite
+    }
+
+    .block-content.with-animation.shake,
+    .mw_preview-box.with-animation.shake {
+      animation: shake 2s linear infinite
+    }
+
+    .block-content.with-animation.bungee,
+    .mw_preview-box.with-animation.bungee {
+      animation: bungee 2s linear infinite;
+      --bungee-dampening: 1
+    }
+  }
+
+  @keyframes medallion {
+    0% {
+      transform: rotateY(0deg) rotate(0deg)
+    }
+
+    50% {
+      transform: rotateY(180deg) rotate(5deg)
+    }
+
+    to {
+      transform: rotateY(1turn) rotate(0deg)
+    }
+  }
+
+  @keyframes tada {
+    0% {
+      transform: scaleX(1)
+    }
+
+    10%,
+    5% {
+      transform: scale3d(.9, .9, .9) rotate(-3deg)
+    }
+
+    15%,
+    25%,
+    35%,
+    45% {
+      transform: scale3d(1.1, 1.1, 1.1) rotate(3deg)
+    }
+
+    20%,
+    30%,
+    40% {
+      transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg)
+    }
+
+    50%,
+    to {
+      transform: scaleX(1)
+    }
+  }
+
+  @keyframes wobble-alt {
+    0% {
+      transform: none
+    }
+
+    7.5% {
+      transform: translate3d(calc(-25% * var(--wobble-alt-dampening)), 0, 0) rotate(-5deg)
+    }
+
+    15% {
+      transform: translate3d(calc(20% * var(--wobble-alt-dampening)), 0, 0) rotate(3deg)
+    }
+
+    22.5% {
+      transform: translate3d(calc(-15% * var(--wobble-alt-dampening)), 0, 0) rotate(-3deg)
+    }
+
+    30% {
+      transform: translate3d(calc(10% * var(--wobble-alt-dampening)), 0, 0) rotate(2deg)
+    }
+
+    37.5% {
+      transform: translate3d(calc(-5% * var(--wobble-alt-dampening)), 0, 0) rotate(-1deg)
+    }
+
+    50%,
+    to {
+      transform: none
+    }
+  }
+
+  @keyframes bounce {
+
+    0%,
+    10%,
+    26.5%,
+    40%,
+    to {
+      transition-timing-function: cubic-bezier(.215, .61, .355, 1);
+      transform: translateZ(0)
+    }
+
+    20%,
+    21.5% {
+      transition-timing-function: cubic-bezier(.755, .05, .855, .06);
+      transform: translate3d(0, -20%, 0)
+    }
+
+    35% {
+      transition-timing-function: cubic-bezier(.755, .05, .855, .06);
+      transform: translate3d(0, -10%, 0)
+    }
+
+    45% {
+      transform: translate3d(0, -2.6%, 0)
+    }
+
+    50%,
+    to {
+      transform: translateZ(0)
+    }
+  }
+
+  @keyframes flash {
+
+    0%,
+    50%,
+    to {
+      opacity: 1
+    }
+
+    25%,
+    75% {
+      opacity: 0
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scaleX(1)
+    }
+
+    50% {
+      transform: scale3d(1.1, 1.1, 1.1)
+    }
+
+    to {
+      transform: scaleX(1)
+    }
+  }
+
+  @keyframes bungee {
+    0% {
+      transform: scale3d(calc(1 * var(--bungee-dampening)), calc(1 * var(--bungee-dampening)), calc(1 * var(--bungee-dampening)))
+    }
+
+    15% {
+      transform: scale3d(calc(1.25 * var(--bungee-dampening)), calc(.75 * var(--bungee-dampening)), calc(1 * var(--bungee-dampening)))
+    }
+
+    20% {
+      transform: scale3d(calc(.75 * var(--bungee-dampening)), calc(1.25 * var(--bungee-dampening)), calc(1 * var(--bungee-dampening)))
+    }
+
+    25% {
+      transform: scale3d(calc(1.15 * var(--bungee-dampening)), calc(.85 * var(--bungee-dampening)), calc(1 * var(--bungee-dampening)))
+    }
+
+    32% {
+      transform: scale3d(calc(.95 * var(--bungee-dampening)), calc(1.05 * var(--bungee-dampening)), calc(1 * var(--bungee-dampening)))
+    }
+
+    37% {
+      transform: scale3d(calc(1.05 * var(--bungee-dampening)), calc(.95 * var(--bungee-dampening)), calc(1 * var(--bungee-dampening)))
+    }
+
+    50% {
+      transform: scale3d(calc(1 * var(--bungee-dampening)), calc(1 * var(--bungee-dampening)), calc(1 * var(--bungee-dampening)))
+    }
+  }
+
+  .block {
+    display: block;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transition: opacity .1s, box-shadow .1s;
+    outline: none;
+    touch-action: manipulation;
+    text-size-adjust: none;
+    box-sizing: border-box;
+    left: calc(var(--x)*var(--rpx));
+    top: calc(var(--y)*var(--rpx));
+    z-index: var(--z);
+    --scale-x: 1;
+    --scale-y: 1;
+    --rotation: 0;
+    transform: translateZ(0) translate(-50%, -50%) rotate(calc(var(--rotation) * 1deg)) scaleX(var(--scale-x)) scaleY(var(--scale-y)) var(--block-on-hover-transform)
+  }
+
+  .block,
+  .block.manually-position {
+    width: calc(var(--width)*var(--rpx));
+    height: calc(var(--height)*var(--rpx))
+  }
+
+  .block.manually-position {
+    left: auto;
+    top: auto;
+    position: relative;
+    transform: scaleX(var(--scale-x)) scaleY(var(--scale-y))
+  }
+
+  .block.pinned {
+    position: fixed
+  }
+
+  .block-content {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
+    outline: none;
+    z-index: 0
+  }
+
+  .block .block-content {
+    transition: transform .1s ease-in-out, opacity .1s ease-in-out;
+    transform: translateZ(0) var(--block-on-hover-transform) var(--block-on-hover-transform);
+    box-sizing: border-box
+  }
+
+  .block:not(.disable-effects) .block-content.ambient-spin {
+    animation-name: spin;
+    animation-duration: 30s;
+    animation-iteration-count: innite;
+    animation-timing-function: linear
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg)
+    }
+
+    to {
+      transform: rotate(1turn)
+    }
+  }
+
+  @media not all and (hover:none) {
+    .block:not(.disable-effects) .block-content.grow-on-hover:hover {
+      --block-on-hover-transform: scale(1.03)
+    }
+
+    .block:not(.disable-effects) .block-content.underline-on-hover:hover span {
+      text-decoration: underline
+    }
+
+    .block:not(.disable-effects) .block-content.opacity-on-hover:hover {
+      opacity: .5
+    }
+  }
+
+  .block {
+    --block-on-hover-transform: scale(1)
+  }
+
+  .block.hyperlinked .link-overlay {
+    height: 100%;
+    width: 100%;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+    display: block
+  }
+
+  .block:not(.overflow-visible)>div {
+    overflow: hidden
+  }
+
+  .block.no-pointer-events {
+    pointer-events: none
+  }
+
+  .twitter-thing .twitter-tweet {
+    margin: 0 auto !important
+  }
+
+  .block.hidden {
+    display: none
+  }
+
+  @media screen and (min-width:601px) {
+    .block.hide-on-desktop {
+      display: none
+    }
+  }
+
+  @media screen and (max-width:599px) {
+    .block.hide-on-mobile {
+      display: none
+    }
+  }
+
+  .mw_gradient.series-music {
+    background-color: #fec84e;
+    background-image: linear-gradient(315deg, #fec84e, #ffdea8 74%)
+  }
+
+  .block[data-type=sticky-note] .inline-rich-text {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+    padding: 16px;
+    box-sizing: border-box;
+    overflow: hidden;
+    word-break: auto;
+    white-space: pre-line
+  }
+
+  .block[data-type=sticky-note] .note-content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 1.25;
+    border: 1px solid rgba(0, 0, 0, .24);
+    border-radius: 4rem;
+    overflow: hidden;
+    --rpx: 1px
+  }
+
+  .block[data-type=sticky-note] .note-content:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    content: " ";
+    height: 100%;
+    border-radius: 3rem;
+    box-sizing: border-box;
+    border-color: hsla(0, 0%, 100%, .32) hsla(0, 0%, 100%, .2) hsla(0, 0%, 100%, .12) hsla(0, 0%, 100%, .28);
+    border-style: solid;
+    border-width: 1px
+  }
+
+  .block[data-type=sticky-note] .note-content h3 {
+    line-height: 1.2;
+    font-size: 24px;
+    margin-bottom: 12rem;
+    font-weight: 600
+  }
+
+  .block[data-type=sticky-note] .note-content .meta {
+    border-top: 1px solid rgba(0, 0, 0, .24);
+    font-size: 11px;
+    margin-top: 12rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 8rem;
+    left: 0;
+    box-sizing: border-box
+  }
+
+  .block[data-type=sticky-note] .note-content .meta-pill {
+    background: rgba(0, 0, 0, .16);
+    height: 24rem;
+    border-radius: 80rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: max-content;
+    padding: 0 10rem
+  }
+
+  .block[data-type=sticky-note] .note-content .img-wrapper {
+    aspect-ratio: 1.7777777778;
+    max-width: 100%;
+    overflow: hidden;
+    margin-bottom: 12rem;
+    border: 1px solid rgba(0, 0, 0, .24);
+    border-radius: 3rem
+  }
+
+  .block[data-type=sticky-note] .note-content img {
+    width: 100%
+  }
+
+  .text-content,
+  .text-content * {
+    font-size: calc(var(--font-size)*var(--scaler-multiplier)*1px)
+  }
+
+  .text-content .fixed-font-size,
+  .text-content.fixed-font-size {
+    transform: none !important;
+    width: auto !important;
+    height: auto !important
+  }
+
+  .text-content {
+    --scaler-multiplier: 1;
+    --width-percent: 100%
+  }
+
+  @supports(background:-webkit-named-image(i)) {
+    .text-content {
+      --scaler-multiplier: 10;
+      --width-percent: calc(var(--scaler-multiplier) * 100%)
+    }
+
+    .text-content:not(.legacy) {
+      font-size: calc(1em*var(--scaler-multiplier))
+    }
+  }
+
+  .text-content {
+    min-width: 100%;
+    width: calc(var(--width-percent)/var(--scaler)) !important;
+    height: calc(var(--width-percent)/var(--scaler)) !important;
+    transform: scale(calc(var(--scaler) / var(--scaler-multiplier))) !important;
+    transform-origin: 0 0;
+    white-space: pre-wrap;
+    word-break: break-word
+  }
+
+  .text-content li {
+    padding-left: .4em
+  }
+
+  .text-content li p {
+    margin-bottom: 0
+  }
+
+  .text-content ol,
+  .text-content ul {
+    padding-left: 1.5em
+  }
+
+  .text-content ul li {
+    list-style: disc
+  }
+
+  .text-content ol li {
+    display: list-item;
+    list-style-type: decimal
+  }
+
+  .text-content strong {
+    font-weight: 700
+  }
+
+  .text-content em {
+    font-style: italic
+  }
+
+  .text-content p:empty:after {
+    content: " "
+  }
+
+  .text-content u span {
+    text-decoration: underline
+  }
+
+  .text-content a {
+    text-decoration: none
+  }
+
+  .text-content a:hover,
+  .text-content a:hover span {
+    text-decoration: underline
+  }
+</style>
+<style>
+  @media not all and (hover:none) {}
+</style>
+<style>
+  .sf-hidden {
+    display: none !important
+  }
+</style>
+<meta http-equiv=content-security-policy content="
+  default-src 'none';
+  font-src 'self' https://fonts.gstatic.com data:;
+  img-src 'self' data: https://*.giphy.com;
+  style-src 'self' 'unsafe-inline';
+  media-src 'self' data:;
+  script-src 'unsafe-inline' data:;
+  object-src 'self' data:;
+  frame-src 'self' data:;
+  ">
+<link href="assets/screen-dimensions.css" rel="stylesheet">
+<style type="text/css">
+  /*
+    POST-EXPORT
+    stuff done to html:
+    - replaced inlined images from SingleFile
+    - removed inline background style from body, site-view, and page-view
+    - strip data-block-id and data-section-id
+    - remove outer #__next div
+    - fixed areas that needed line breaks after white-space change
+    more to do:
+    - un-inline more properties like text size
+  */
+
+  /* requires some reformatting, but allows you to format this file without breaking text */
+  .text-content {
+    white-space: unset;
+  }
+
+  /* global max width */
+  :root {
+    --max-width: var(--page-reference-width);
+  }
+
+  div[data-type=content] {
+    --scaler: 1;
+  }
+
+  @media screen and (max-width: 700px) {
+    /* see screen-dimensions.css */
+    div[data-type=content] {
+      --scaler: calc(var(--px-width) / var(--max-width));
+    }
+  }
+
+  body {
+    /* copied from page-view inline style */
+    background-color: rgb(19, 27, 45);
+    background-image: url("assets/milkyway.jpg");
+  }
+
+  /* personal tweaks */
+  body {
+    font-family: "Roboto Mono", monospace;
+    background-attachment: fixed;
+  }
+  .text-content ul li {
+    list-style: inherit;
+  }
+  .text-content a {
+    color: var(--link-color, inherit);
+  }
+</style>
+
+<body>
+  <div class=site-view>
+    <div class=main-container>
+      <main class=body-content>
+        <div class="page-view autoresponsive">
+          <h1 class="hidden sf-hidden">RFC: maintenance dinners</h1>
+          <section id=ideas data-type=section style=--parent-rpx:var(--rpx)>
+            <div data-type=content class=freeform style=--height:2155.13046875;>
+              <div id=text-2 data-type=text class="block overflow-visible"
+                style=--height:73;--width:590;--x:350;--y:106;--z:49792;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(14*var(--rpx))>
+                  <div class=text-content>
+                    <h1 style='--font-size:32;line-height:1.4;text-align:center'><span
+                        style=color:rgb(255,255,255)><strong>RFC: maintenance dinners</strong></span></h1>
+                  </div>
+                </div>
+              </div>
+              <div id=gif-7 data-type=gif class=block
+                style=--height:150;--width:150;--x:45;--y:240;--z:50232;--rotation:26.9;--scale-x:1;--scale-y:1;pointer-events:none>
+                <div class=block-content style=overflow:hidden>
+                  <picture>
+                    <source
+                      srcset="https://media1.giphy.com/media/wj1Hz68rlKRbOiCXHh/100w.webp 100w,https://media1.giphy.com/media/wj1Hz68rlKRbOiCXHh/200w.webp 200w,https://media1.giphy.com/media/wj1Hz68rlKRbOiCXHh/giphy.webp 300w"
+                      sizes="(max-width: 600px) 15000vw, 90000px" type="image/webp">
+                    <source
+                      srcset="https://media1.giphy.com/media/wj1Hz68rlKRbOiCXHh/100w.gif 100w,https://media1.giphy.com/media/wj1Hz68rlKRbOiCXHh/200w.gif 200w,https://media1.giphy.com/media/wj1Hz68rlKRbOiCXHh/giphy.gif 300w"
+                      sizes="(max-width: 600px) 15000vw, 90000px" type="image/gif">
+                    <img src="https://media1.giphy.com/media/wj1Hz68rlKRbOiCXHh/giphy.gif" title="Source: abmz"
+                      alt="Source: abmz" draggable="false" loading="eager">
+                  </picture>
+                </div>
+              </div>
+              <div id=shape-2 data-type=shape class=block
+                style=--height:272;--width:272;--x:136;--y:351;--z:49777;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content with-animation pulse" style=overflow:hidden><svg
+                    xmlns=http://www.w3.org/2000/svg height=100% width=100% viewBox="0 0 200 200"
+                    preserveAspectRatio=none>
+                    <path fill=#f6a04d
+                      d="M100 0c3.395 53.76 46.24 96.605 100 100-53.76 3.395-96.605 46.24-100 100-3.395-53.76-46.24-96.605-100-100C53.76 96.605 96.605 53.76 100 0Z">
+                    </path>
+                  </svg></div>
+              </div>
+              <div id=shape-5 data-type=shape class=block
+                style=--height:75;--width:275;--x:195;--y:278;--z:49782;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class=block-content style=overflow:hidden;filter:blur(12px)><svg xmlns=http://www.w3.org/2000/svg
+                    height=100% width=100% viewBox="0 0 512 512" preserveAspectRatio=none>
+                    <polygon points="512 0, 512 512, 0 512, 0 0" fill="rgba(26, 15, 91, 0.75)"></polygon>
+                  </svg></div>
+              </div>
+              <div id=text-5 data-type=text class="block overflow-visible"
+                style=--height:66;--width:239;--x:198;--y:277;--z:49897;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(10.5*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.4;text-align:center'><span
+                        style=color:rgb(255,255,255)>collective maintenance as knowledge sharing </span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-4 data-type=text class="block overflow-visible"
+                style=--height:47;--width:203;--x:137;--y:349;--z:49797;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <h3 style='--font-size:16;line-height:1.4'><span style=color:rgb(132,8,8)><strong>maintenance &amp;
+                          care</strong></span></h3>
+                  </div>
+                </div>
+              </div>
+              <div id=text-65 data-type=text class="block overflow-visible"
+                style=--height:47;--width:46;--x:268;--y:396;--z:50112;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style=font-family:sans-serif;--font-size:18;line-height:1.25>✨</p>
+                  </div>
+                </div>
+              </div>
+              <div id=image-3 data-type=image class=block aria-label="food not bombs logo"
+                style=--height:100;--width:91;--x:649;--y:440;--z:49862;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class=block-content style=overflow:hidden>
+                  <picture><img src="assets/fnb.webp" title="food not bombs logo" alt="food not bombs logo"
+                      draggable="false" loading="lazy"></picture>
+                </div>
+              </div>
+              <div id=shape-4 data-type=shape class=block
+                style=--height:52;--width:278;--x:127;--y:427;--z:49807;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class=block-content style=overflow:hidden;filter:blur(12px)><svg xmlns=http://www.w3.org/2000/svg
+                    height=100% width=100% viewBox="0 0 512 512" preserveAspectRatio=none>
+                    <polygon points="512 0, 512 512, 0 512, 0 0" fill="rgba(26, 15, 91, 0.75)"></polygon>
+                  </svg></div>
+              </div>
+              <div id=text-3 data-type=text class="block overflow-visible hyperlinked"
+                style=--height:47;--width:248;--x:128;--y:428;--z:49812;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content underline-on-hover overflow-visible"
+                  style=overflow:visible;padding:calc(12*var(--rpx))><a aria-label class=link-overlay
+                    href=https://dl.acm.org/doi/10.1145/3579617 target=_blank>
+                    <div class=text-content>
+                      <p style='--font-size:16;line-height:1.4'><span style=color:rgb(255,255,255)><u>sysadmin as care
+                            worker</u></span></p>
+                    </div>
+                  </a></div>
+              </div>
+              <div id=gif-2 data-type=gif class=block aria-label="illustrated gif of hot pot"
+                style=--height:159;--width:159;--x:593;--y:503;--z:49822;--rotation:0;--scale-x:1;--scale-y:1;pointer-events:none>
+                <div class=block-content style=overflow:hidden>
+                  <picture>
+                    <source
+                      srcset="https://media4.giphy.com/media/KmYV2zWKxa60OCck5p/100w.webp 100w,https://media4.giphy.com/media/KmYV2zWKxa60OCck5p/200w.webp 200w,https://media4.giphy.com/media/KmYV2zWKxa60OCck5p/giphy.webp 300w"
+                      sizes="(max-width: 600px) 15930.000000000002vw, 95580px" type="image/webp">
+                    <source
+                      srcset="https://media4.giphy.com/media/KmYV2zWKxa60OCck5p/100w.gif 100w,https://media4.giphy.com/media/KmYV2zWKxa60OCck5p/200w.gif 200w,https://media4.giphy.com/media/KmYV2zWKxa60OCck5p/giphy.gif 300w"
+                      sizes="(max-width: 600px) 15930.000000000002vw, 95580px" type="image/gif">
+                    <img src="https://media4.giphy.com/media/KmYV2zWKxa60OCck5p/giphy.gif"
+                      title="Source: Holler Studios" alt="Source: Holler Studios" draggable="false" loading="eager">
+                  </picture>
+                </div>
+              </div>
+              <div id=image-2 data-type=image class=block
+                aria-label="dark photo of a nighttime park potluck with some mutual aid organizer friends"
+                style=--height:326;--width:401;--x:518;--y:666;--z:49817;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class=block-content style=border-radius:calc(48*var(--rpx));overflow:hidden>
+                  <picture>
+                    <img src="assets/potluck.jpg"
+                      title="dark photo of a nighttime park potluck with some mutual aid organizer friends"
+                      alt="dark photo of a nighttime park potluck with some mutual aid organizer friends"
+                      draggable="false" loading="lazy">
+                  </picture>
+                </div>
+              </div>
+              <div id=text-11 data-type=text class="block overflow-visible"
+                style=--height:44;--width:92;--x:473;--y:534;--z:49847;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.25'><span style=color:rgb(255,255,255)>potluck</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-10 data-type=text class="block overflow-visible"
+                style=--height:44;--width:130;--x:454;--y:566;--z:49842;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.25'><span style=color:rgb(255,255,255)>family meal</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-7 data-type=text class="block overflow-visible"
+                style=--height:44;--width:130;--x:514;--y:594;--z:49827;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.25'><span style=color:#ffffff>dinner club</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-12 data-type=text class="block overflow-visible"
+                style=--height:44;--width:130;--x:565;--y:620;--z:49852;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.25'><span style=color:rgb(255,255,255)>food distro</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-84 data-type=text class="block overflow-visible"
+                style=--height:47;--width:42;--x:23;--y:726;--z:50222;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible"
+                  style=opacity:1;overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style=font-family:sans-serif;--font-size:18;line-height:1.25>📌</p>
+                  </div>
+                </div>
+              </div>
+              <div id=shape-10 data-type=shape class=block
+                style=--height:222;--width:243;--x:117;--y:827;--z:49762;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class=block-content style=opacity:0.05;overflow:hidden><svg xmlns=http://www.w3.org/2000/svg
+                    height=100% width=100% viewBox="0 0 512 512" preserveAspectRatio=none>
+                    <polygon points="512 0, 512 512, 0 512, 0 0" fill=#ffffff></polygon>
+                  </svg></div>
+              </div>
+              <div id=text-29 data-type=text class="block overflow-visible"
+                style=--height:47;--width:101;--x:157;--y:742;--z:49917;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible"
+                  style=opacity:0.6;overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.4'><span style=color:rgb(255,255,255)>infoshop</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-30 data-type=text class="block overflow-visible"
+                style=--height:47;--width:121;--x:85;--y:763;--z:49922;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible"
+                  style=opacity:0.6;overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.4'><span style=color:rgb(255,255,255)>zine share</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-31 data-type=text class="block overflow-visible"
+                style=--height:47;--width:140;--x:161;--y:799;--z:49927;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible"
+                  style=opacity:0.6;overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.4'><span style=color:rgb(255,255,255)>mailing list</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-9 data-type=text class="block overflow-visible"
+                style=--height:47;--width:265;--x:414;--y:808;--z:49837;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.4'><span style=color:rgb(255,255,255)>to nourish is to
+                        maintain</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-8 data-type=text class="block overflow-visible"
+                style=--height:47;--width:255;--x:549;--y:832;--z:49832;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.4'><span style=color:rgb(255,255,255)>table as gathering
+                        place</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-83 data-type=text class="block overflow-visible"
+                style=--height:47;--width:130;--x:69;--y:841;--z:50217;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible"
+                  style=opacity:0.6;overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.4'><span style=color:rgb(255,255,255)>repair cafe</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-82 data-type=text class="block overflow-visible"
+                style=--height:47;--width:130;--x:161;--y:858;--z:50212;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible"
+                  style=opacity:0.6;overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.4'><span style=color:rgb(255,255,255)>hackerspace</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-32 data-type=text class="block overflow-visible"
+                style=--height:47;--width:149;--x:75;--y:892;--z:49932;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible"
+                  style=opacity:0.6;overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.4'><span style=color:rgb(255,255,255)>meeting space</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-33 data-type=text class="block overflow-visible"
+                style=--height:44;--width:184;--x:146;--y:914;--z:49937;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible"
+                  style=opacity:0.6;overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:14;line-height:1.4'><span style=color:rgb(255,255,255)>(physical,
+                        virtual)</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=shape-15 data-type=shape class=block
+                style=--height:105;--width:533;--x:350;--y:1044;--z:49752;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class=block-content style=border-radius:calc(13*var(--rpx));opacity:0.75;overflow:hidden><svg
+                    xmlns=http://www.w3.org/2000/svg height=100% width=100% viewBox="0 0 512 512"
+                    preserveAspectRatio=none>
+                    <polygon points="512 0, 512 512, 0 512, 0 0" fill=#000></polygon>
+                  </svg></div>
+              </div>
+              <div id=text-6 data-type=text class="block overflow-visible"
+                style=--height:89;--width:472;--x:327;--y:1045;--z:49802;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible"
+                  style=opacity:0.8;overflow:visible;padding:calc(10.5*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.4;text-align:justify'><span
+                        style=color:rgb(255,255,255)>/whisper “i often place myself in the role of digital
+                        infrastructure and maintenance because little else is physically accessible to me” </span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=shape-16 data-type=shape class=block
+                style=--height:23;--width:23;--x:590;--y:1072;--z:50052;--rotation:90;--scale-x:1;--scale-y:1>
+                <div class=block-content style=opacity:0.68;overflow:hidden><svg xmlns=http://www.w3.org/2000/svg
+                    height=100% width=100% viewBox="0 0 512 512" preserveAspectRatio=none>
+                    <polygon points="256 0, 512 512, 0 512" fill=#ffffff></polygon>
+                  </svg></div>
+              </div>
+              <div id=shape-17 data-type=shape class=block
+                style=--height:19;--width:5;--x:586;--y:1072;--z:50057;--rotation:90;--scale-x:1;--scale-y:1>
+                <div class=block-content style=overflow:hidden><svg xmlns=http://www.w3.org/2000/svg height=100%
+                    width=100% viewBox="0 0 512 512" preserveAspectRatio=none>
+                    <polygon points="256 0, 512 512, 0 512" fill=#000></polygon>
+                  </svg></div>
+              </div>
+              <div id=shape-7 data-type=shape class=block
+                style=--height:354;--width:354;--x:113;--y:1345;--z:49772;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class=block-content
+                  style=border-radius:calc(0*var(--rpx));opacity:0.4;overflow:hidden;filter:blur(20px)><svg
+                    xmlns=http://www.w3.org/2000/svg height=100% width=100% viewBox="0 0 512 512"
+                    preserveAspectRatio=none>
+                    <circle cx=256 cy=256 r=256 fill=#169b62></circle>
+                  </svg></div>
+              </div>
+              <div id=shape-8 data-type=shape class=block
+                style=--height:265;--width:265;--x:113;--y:1345;--z:49867;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content with-animation pulse"
+                  style=border-radius:calc(0*var(--rpx));opacity:1;overflow:hidden;filter:blur(20px)><svg
+                    xmlns=http://www.w3.org/2000/svg height=100% width=100% viewBox="0 0 512 512"
+                    preserveAspectRatio=none>
+                    <circle cx=256 cy=256 r=256 fill=#169b62></circle>
+                  </svg></div>
+              </div>
+              <div id=text-18 data-type=text class="block overflow-visible"
+                style=--height:69;--width:354;--x:301;--y:1259;--z:49887;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.4'><span style=color:rgb(255,255,255)>transition from crisis
+                        response to sustainable mutual**
+                        organizing</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-16 data-type=text class="block overflow-visible"
+                style=--height:69;--width:285;--x:395;--y:1340;--z:49877;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.4'><span style=color:rgb(255,255,255)>disrepair, abandonment,
+                        lack of maintenance</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-14 data-type=text class="block overflow-visible"
+                style=--height:69;--width:226;--x:113;--y:1356;--z:49872;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <h3 style='--font-size:16;line-height:1.4'><span style=color:rgb(255,255,255)><strong>hyperlocal
+                          mutual aid</strong></span></h3>
+                    <p style='--font-size:16;line-height:1.4;text-align:center'><span
+                        style=color:rgb(255,255,255)><strong>(2025)</strong></span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-19 data-type=text class="block overflow-visible"
+                style=--height:44;--width:322;--x:442;--y:1375;--z:49892;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:14;line-height:1.4'><span
+                        style=color:rgb(255,255,255)>(infrastructural/interpersonal)</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-22 data-type=text class="block overflow-visible"
+                style=--height:47;--width:310;--x:350;--y:1425;--z:49902;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.4'><span style=color:rgb(255,255,255)>weak intergroup
+                        relationships</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-23 data-type=text class="block overflow-visible"
+                style=--height:44;--width:310;--x:556;--y:1455;--z:49907;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:14;line-height:1.4'><span style=color:rgb(255,255,255)>fragmented community
+                        memory</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-17 data-type=text class="block overflow-visible"
+                style=--height:69;--width:372;--x:221;--y:1483;--z:49882;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16.008618367896577;line-height:1.4'><span
+                        style=color:rgb(255,255,255)>burdened by infrastructures no longer needed, politically
+                        unaligned</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=shape-11 data-type=shape class=block
+                style=--height:518;--width:518;--x:441;--y:1842;--z:49977;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class=block-content style=opacity:1;overflow:hidden><svg xmlns=http://www.w3.org/2000/svg
+                    height=100% width=100% viewBox="0 0 53 53" preserveAspectRatio=none>
+                    <path fill="rgba(34, 37, 154, 1)"
+                      d="M52.6 26.5c0-2.6-2.1-4.8-4.8-4.8h-3.7l3.2-1.9c2.3-1.3 3.1-4.2 1.7-6.5-1.3-2.3-4.2-3.1-6.5-1.7l-3.2 1.9 1.9-3.2c1.3-2.3.5-5.2-1.7-6.5-2.3-1.3-5.2-.5-6.5 1.7l-1.9 3.2V5c0-2.6-2.1-4.8-4.8-4.8-2.6 0-4.8 2.1-4.8 4.8v3.7l-1.9-3.2c-1.3-2.3-4.2-3.1-6.5-1.7-2.3 1.3-3.1 4.2-1.7 6.5l1.9 3.2-3.2-1.9c-2.3-1.3-5.2-.5-6.5 1.7-1.3 2.3-.5 5.2 1.7 6.5l3.2 1.9H4.8c-2.6 0-4.8 2.1-4.8 4.8 0 2.6 2.1 4.8 4.8 4.8h3.7l-3.2 1.9c-2.3 1.3-3.1 4.2-1.7 6.5 1.3 2.3 4.2 3.1 6.5 1.7l3.2-1.9-1.9 3.2c-1.3 2.3-.5 5.2 1.7 6.5 2.3 1.3 5.2.5 6.5-1.7l1.9-3.2V48c0 2.6 2.1 4.8 4.8 4.8 2.6 0 4.8-2.1 4.8-4.8v-3.7l1.9 3.2c1.3 2.3 4.2 3.1 6.5 1.7 2.3-1.3 3.1-4.2 1.7-6.5l-1.9-3.2 3.2 1.9c2.3 1.3 5.2.5 6.5-1.7 1.3-2.3.5-5.2-1.7-6.5l-3.2-1.9h3.7c2.7 0 4.8-2.1 4.8-4.8Z">
+                    </path>
+                  </svg></div>
+              </div>
+              <div id=text-28 data-type=text class="block overflow-visible"
+                style=--height:58;--width:317;--x:441;--y:1742;--z:49997;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(14*var(--rpx))>
+                  <div class=text-content>
+                    <h2 style='--font-size:24;line-height:1.25'><span
+                        style=color:rgb(255,255,255)><strong>meta-infrastructures</strong></span></h2>
+                  </div>
+                </div>
+              </div>
+              <div id=shape-12 data-type=shape class=block
+                style=--height:192;--width:271;--x:395;--y:1850;--z:49982;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class=block-content style=opacity:0.5;overflow:hidden;filter:blur(20px)><svg
+                    xmlns=http://www.w3.org/2000/svg height=100% width=100% viewBox="0 0 512 512"
+                    preserveAspectRatio=none>
+                    <circle cx=256 cy=256 r=256 fill=#BB76CF></circle>
+                  </svg></div>
+              </div>
+              <div id=shape-14 data-type=shape class=block
+                style=--height:192;--width:271;--x:395;--y:1850;--z:49992;--rotation:0;--scale-x:1;--scale-y:1;mix-blend-mode:hue>
+                <div class=block-content style=opacity:0.5;overflow:hidden;filter:blur(20px)><svg
+                    xmlns=http://www.w3.org/2000/svg height=100% width=100% viewBox="0 0 512 512"
+                    preserveAspectRatio=none>
+                    <circle cx=256 cy=256 r=256 fill=#BB76CF></circle>
+                  </svg></div>
+              </div>
+              <div id=shape-13 data-type=shape class=block
+                style=--height:197;--width:286;--x:502;--y:1873;--z:49987;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class=block-content style=opacity:0.5;overflow:hidden;filter:blur(20px)><svg
+                    xmlns=http://www.w3.org/2000/svg height=100% width=100% viewBox="0 0 512 512"
+                    preserveAspectRatio=none>
+                    <circle cx=256 cy=256 r=256 fill=#82d8d5></circle>
+                  </svg></div>
+              </div>
+              <div id=text-49 data-type=text class="block overflow-visible"
+                style=--height:44;--width:40;--x:387;--y:1810;--z:50022;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible"
+                  style=opacity:0.64;overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.25'>🔋</p>
+                  </div>
+                </div>
+              </div>
+              <div id=image-4 data-type=image class=block
+                style=--height:134;--width:134;--x:441;--y:1859;--z:50062;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content with-animation spin" style=opacity:0.4;overflow:hidden;filter:blur(2px)>
+                  <picture><img
+                      src="data:image/png;base64,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"
+                      title alt draggable=false loading=lazy srcset sizes></picture>
+                </div>
+              </div>
+              <div id=text-52 data-type=text class="block overflow-visible"
+                style=--height:44;--width:40;--x:553;--y:1821;--z:50037;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible"
+                  style=opacity:0.64;overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.25'>🧑‍🔧</p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-48 data-type=text class="block overflow-visible"
+                style=--height:44;--width:66;--x:299;--y:1821;--z:50017;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible"
+                  style=opacity:0.64;overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.25'>🪨📀</p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-50 data-type=text class="block overflow-visible"
+                style=--height:44;--width:40;--x:502;--y:1836;--z:50027;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible"
+                  style=opacity:0.64;overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.25'>☎️</p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-53 data-type=text class="block overflow-visible"
+                style=--height:44;--width:40;--x:581;--y:1842;--z:50042;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible"
+                  style=opacity:0.64;overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.25'>👪</p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-44 data-type=text class="block overflow-visible"
+                style=--height:47;--width:101;--x:373;--y:1847;--z:50002;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible"
+                  style=opacity:0.6;overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.4'><span style=color:rgb(255,255,255)>material</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-45 data-type=text class="block overflow-visible"
+                style=--height:47;--width:121;--x:515;--y:1878;--z:50007;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible"
+                  style=opacity:0.6;overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.4'><span style=color:rgb(255,255,255)>relational</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-47 data-type=text class="block overflow-visible"
+                style=--height:44;--width:87;--x:366;--y:1917;--z:50012;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible"
+                  style=opacity:0.64;overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.25'>🚚✈️📦</p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-51 data-type=text class="block overflow-visible"
+                style=--height:44;--width:66;--x:520;--y:1929;--z:50032;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible"
+                  style=opacity:0.64;overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.25'>📆📝</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id=dinner data-type=section style=--parent-rpx:var(--rpx);background:rgb(206,183,238)>
+            <div data-type=content class=freeform style=--height:668.9;>
+              <div id=gif-6 data-type=gif class=block
+                style=--height:286;--width:286;--x:570;--y:133;--z:50227;--rotation:0;--scale-x:1;--scale-y:1;pointer-events:none>
+                <div class=block-content style=overflow:hidden>
+                  <picture>
+                    <source
+                      srcset="https://media1.giphy.com/media/GKCJ0hpJk0OCcydAdg/100w.webp 100w,https://media1.giphy.com/media/GKCJ0hpJk0OCcydAdg/200w.webp 200w,https://media1.giphy.com/media/GKCJ0hpJk0OCcydAdg/giphy.webp 300w"
+                      sizes="(max-width: 600px) 28550vw, 171300px" type="image/webp">
+                    <source
+                      srcset="https://media1.giphy.com/media/GKCJ0hpJk0OCcydAdg/100w.gif 100w,https://media1.giphy.com/media/GKCJ0hpJk0OCcydAdg/200w.gif 200w,https://media1.giphy.com/media/GKCJ0hpJk0OCcydAdg/giphy.gif 300w"
+                      sizes="(max-width: 600px) 28550vw, 171300px" type="image/gif"><img
+                      src="https://media1.giphy.com/media/GKCJ0hpJk0OCcydAdg/giphy.gif" title="Source: Joi Fulton"
+                      alt="Source: Joi Fulton" draggable="false" loading="eager">
+                  </picture>
+                </div>
+              </div>
+              <div id=text-75 data-type=text class="block overflow-visible"
+                style=--height:47;--width:46;--x:48;--y:70;--z:50162;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style=font-family:sans-serif;--font-size:18;line-height:1.25>💌</p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-54 data-type=text class="block overflow-visible"
+                style=--height:69;--width:408;--x:229;--y:106;--z:50047;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <h1 style='--font-size:32;line-height:1.4'><span style=color:rgba(128,84,202,1)><strong>maintenance
+                          dinners</strong> </span></h1>
+                  </div>
+                </div>
+              </div>
+              <div id=text-57 data-type=text class="block overflow-visible"
+                style=--height:50;--width:338;--x:194;--y:150;--z:50072;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:18;line-height:1.4;text-align:center'><span
+                        style=color:rgb(128,84,202)><strong>for mutual aid infrastructure</strong></span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-13 data-type=text class="block overflow-visible"
+                style=--height:416;--width:504;--x:277;--y:395;--z:49857;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:20;line-height:1.4;color:rgb(24,20,55)'>
+                      shared meals form the basis <br>of communal maintenance. we’re maintaining our bodies and our
+                      relationships.
+                      <br><br>
+                      we can work towards our own technical infrastructures by first
+                      forming the social infrastructure and practicing maintenance in all its forms.
+                      <br><br>maintenance dinners can be a time and place where we learn, share,
+                      hack, debug, code, connect, salvage, repair...
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id=online data-type=section style=--parent-rpx:var(--rpx);background:rgb(149,113,193)>
+            <div data-type=content class=freeform style=--height:278;>
+              <div id=text-85 data-type=text class="block overflow-visible"
+                style=--height:208;--width:510;--x:452;--y:139;--z:50247;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(14*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.25;color:rgb(255,255,255)'>
+                      irl is always special, but sometimes meeting online is more
+                      accessible.<br><br>
+                      there are ways to hang out and collaborate in cyberspace beyond a
+                      zoom meeting!<br><br>
+                      virtual worlds, text-based games, doing puzzles together, spatial
+                      audio, infinite drawing canvases, <a target=_self rel="noopener noreferrer nofollow"
+                        href=#chillzone><span style=color:#ffffff><u>to name a few</u></span></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div id=gif-10 data-type=gif class=block
+                style=--height:150;--width:142;--x:-63;--y:119;--z:50242;--rotation:0;--scale-x:1;--scale-y:1;pointer-events:none>
+                <div class=block-content style=overflow:hidden>
+                  <picture>
+                    <source
+                      srcset="https://media3.giphy.com/media/THZQbkCtpUohS4r8sZ/100w.webp 100w,https://media3.giphy.com/media/THZQbkCtpUohS4r8sZ/200w.webp 200w,https://media3.giphy.com/media/THZQbkCtpUohS4r8sZ/giphy.webp 300w"
+                      sizes="(max-width: 600px) 14190vw, 85140px" type="image/webp">
+                    <source
+                      srcset="https://media3.giphy.com/media/THZQbkCtpUohS4r8sZ/100w.gif 100w,https://media3.giphy.com/media/THZQbkCtpUohS4r8sZ/200w.gif 200w,https://media3.giphy.com/media/THZQbkCtpUohS4r8sZ/giphy.gif 300w"
+                      sizes="(max-width: 600px) 14190vw, 85140px" type="image/gif">
+                    <img src="https://media3.giphy.com/media/THZQbkCtpUohS4r8sZ/giphy.gif" title="Source: Lucas Nova"
+                      alt="Source: Lucas Nova" draggable="false" loading="eager">
+                  </picture>
+                </div>
+              </div>
+              <div id=gif-9 data-type=gif class=block
+                style=--height:135;--width:135;--x:107;--y:119;--z:50237;--rotation:0;--scale-x:1;--scale-y:1;pointer-events:none>
+                <div class=block-content style=overflow:hidden>
+                  <picture>
+                    <source
+                      srcset="https://media4.giphy.com/media/W3NjuxoCNrfTLGJxfX/100w.webp 100w,https://media4.giphy.com/media/W3NjuxoCNrfTLGJxfX/200w.webp 200w,https://media4.giphy.com/media/W3NjuxoCNrfTLGJxfX/giphy.webp 300w"
+                      sizes="(max-width: 600px) 13500vw, 81000px" type="image/webp">
+                    <source
+                      srcset="https://media4.giphy.com/media/W3NjuxoCNrfTLGJxfX/100w.gif 100w,https://media4.giphy.com/media/W3NjuxoCNrfTLGJxfX/200w.gif 200w,https://media4.giphy.com/media/W3NjuxoCNrfTLGJxfX/giphy.gif 300w"
+                      sizes="(max-width: 600px) 13500vw, 81000px" type="image/gif"><img
+                      src="https://media4.giphy.com/media/W3NjuxoCNrfTLGJxfX/giphy.gif" title="Source: おめがちゃん"
+                      alt="Source: おめがちゃん" draggable="false" loading="eager">
+                  </picture>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id=discuss data-type=section style=--parent-rpx:var(--rpx);background:rgba(21,9,62,0.43)>
+            <div data-type=content class=freeform style=--height:1207.1;>
+              <div id=text-63 data-type=text class="block overflow-visible"
+                style=--height:47;--width:46;--x:183;--y:81;--z:50102;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style=font-family:sans-serif;--font-size:18;line-height:1.25>✨</p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-64 data-type=text class="block overflow-visible"
+                style=--height:47;--width:46;--x:159;--y:87;--z:50107;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style=font-family:sans-serif;--font-size:18;line-height:1.25>🌙</p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-35 data-type=text class="block overflow-visible"
+                style=--height:53;--width:499;--x:447;--y:97;--z:49942;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(14*var(--rpx))>
+                  <div class=text-content>
+                    <h2 style='--font-size:20;line-height:1.25'><span style=color:rgb(255,255,255)><strong>things we
+                          might talk about over dinner</strong></span>
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div id=shape-18 data-type=shape class=block
+                style=--height:30;--width:461;--x:440;--y:98;--z:49747;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content with-animation pulse" style=opacity:0.74;overflow:hidden;filter:blur(20px)>
+                  <svg xmlns=http://www.w3.org/2000/svg height=100% width=100% viewBox="0 0 512 512"
+                    preserveAspectRatio=none>
+                    <polygon points="512 0, 512 512, 0 512, 0 0" fill=#9d7ad2></polygon>
+                  </svg>
+                </div>
+              </div>
+              <div id=text-69 data-type=text class="block overflow-visible"
+                style=--height:47;--width:42;--x:675;--y:130;--z:50132;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style=font-family:sans-serif;--font-size:18;line-height:1.25>💫</p>
+                  </div>
+                </div>
+              </div>
+              <ul>
+                <li>
+                  <div id=text-37 data-type=text class="block overflow-visible"
+                    style=--height:68;--width:510;--x:392;--y:192;--z:49952;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible" style=overflow:visible;padding:calc(14*var(--rpx))>
+                      <div class=text-content>
+                        <p style='--font-size:16;line-height:1.25'><span style=color:rgb(255,255,255)>who are we? what
+                            skills and knowledge do we bring? what
+                            perspectives? what do we want to learn?</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id=text-68 data-type=text class="block overflow-visible"
+                    style=--height:47;--width:46;--x:132;--y:192;--z:50127;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                      <div class=text-content>
+                        <p style=font-family:sans-serif;--font-size:18;line-height:1.25>✨</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id=text-40 data-type=text class="block overflow-visible"
+                    style=--height:46;--width:331;--x:445;--y:230;--z:49967;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible"
+                      style=opacity:0.9;overflow:visible;padding:calc(14*var(--rpx))>
+                      <div class=text-content>
+                        <p style='--font-size:14;line-height:1.25'><span style=color:rgb(255,255,255)>what resources do
+                            we have access to?</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id=text-61 data-type=text class="block overflow-visible"
+                    style=--height:46;--width:205;--x:563;--y:254;--z:50092;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible"
+                      style=opacity:0.9;overflow:visible;padding:calc(14*var(--rpx))>
+                      <div class=text-content>
+                        <p style='--font-size:14;line-height:1.25;text-align:center'><span
+                            style=color:rgb(255,255,255)>what is our capacity?</span></p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div id=text-38 data-type=text class="block overflow-visible"
+                    style=--height:68;--width:414;--x:235;--y:328;--z:49957;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible" style=overflow:visible;padding:calc(14*var(--rpx))>
+                      <div class=text-content>
+                        <p style='--font-size:16;line-height:1.25'><span style=color:rgb(255,255,255)>what are our
+                            shared principles? how will those guide how we
+                            select technologies?</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id=text-66 data-type=text class="block overflow-visible"
+                    style=--height:47;--width:46;--x:20;--y:328;--z:50117;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                      <div class=text-content>
+                        <p style=font-family:sans-serif;--font-size:18;line-height:1.25>⭐️</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div id=text-60 data-type=text class="block overflow-visible"
+                    style=--height:68;--width:300;--x:350;--y:413;--z:50087;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible" style=overflow:visible;padding:calc(14*var(--rpx))>
+                      <div class=text-content>
+                        <p style='--font-size:16;line-height:1.25;text-align:justify'><span
+                            style=color:rgb(255,255,255)>how will we make decisions? deal with conflict?</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id=text-70 data-type=text class="block overflow-visible"
+                    style=--height:47;--width:46;--x:192;--y:412;--z:50137;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                      <div class=text-content>
+                        <p style=font-family:sans-serif;--font-size:18;line-height:1.25>💫</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id=text-62 data-type=text class="block overflow-visible"
+                    style=--height:63;--width:222;--x:536;--y:438;--z:50097;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible"
+                      style=opacity:0.9;overflow:visible;padding:calc(14*var(--rpx))>
+                      <div class=text-content>
+                        <p style='--font-size:14;line-height:1.25'><span style=color:rgb(255,255,255)>what kind of power
+                            dynamics are at play?</span></p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div id=text-41 data-type=text class="block overflow-visible"
+                    style=--height:68;--width:409;--x:495;--y:523;--z:49972;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible" style=overflow:visible;padding:calc(14*var(--rpx))>
+                      <div class=text-content>
+                        <p style='--font-size:16;line-height:1.25'><span style=color:rgb(255,255,255)>who should access
+                            our infrastructure? who is it for? how do they
+                            participate?</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id=text-72 data-type=text class="block overflow-visible"
+                    style=--height:47;--width:46;--x:285;--y:523;--z:50147;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                      <div class=text-content>
+                        <p style=font-family:sans-serif;--font-size:18;line-height:1.25>⭐️</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div id=text-56 data-type=text class="block overflow-visible"
+                    style=--height:68;--width:414;--x:242;--y:610;--z:50067;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible" style=overflow:visible;padding:calc(14*var(--rpx))>
+                      <div class=text-content>
+                        <p style='--font-size:16;line-height:1.25'><span style=color:rgb(255,255,255)>what
+                            infrastructures are we already using? which do we rely
+                            on?</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id=text-71 data-type=text class="block overflow-visible"
+                    style=--height:47;--width:46;--x:31;--y:610;--z:50142;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                      <div class=text-content>
+                        <p style=font-family:sans-serif;--font-size:18;line-height:1.25>✨</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id=text-77 data-type=text class="block overflow-visible"
+                    style=--height:63;--width:269;--x:531;--y:624;--z:50172;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible"
+                      style=opacity:0.9;overflow:visible;padding:calc(14*var(--rpx))>
+                      <div class=text-content>
+                        <p style='--font-size:14;line-height:1.25'><span style=color:rgb(255,255,255)>do alternatives
+                            exist that align with our principles?</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id=text-76 data-type=text class="block overflow-visible"
+                    style=--height:46;--width:289;--x:266;--y:654;--z:50167;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible"
+                      style=opacity:0.9;overflow:visible;padding:calc(14*var(--rpx))>
+                      <div class=text-content>
+                        <p style='--font-size:14;line-height:1.25'><span style=color:rgb(255,255,255)>what’s good and
+                            bad about them?</span></p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div id=text-59 data-type=text class="block overflow-visible"
+                    style=--height:68;--width:318;--x:224;--y:738;--z:50082;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible" style=overflow:visible;padding:calc(14*var(--rpx))>
+                      <div class=text-content>
+                        <p style='--font-size:16;line-height:1.25'><span style=color:rgb(255,255,255)>what is practical
+                            for us?</span>
+                        <p style='--font-size:16;line-height:1.25'><span style=color:rgb(255,255,255)>what is
+                            aspirational?</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id=text-73 data-type=text class="block overflow-visible"
+                    style=--height:47;--width:46;--x:58;--y:730;--z:50152;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                      <div class=text-content>
+                        <p style=font-family:sans-serif;--font-size:18;line-height:1.25>💫</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id=text-39 data-type=text class="block overflow-visible"
+                    style=--height:46;--width:365;--x:291;--y:778;--z:49962;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible"
+                      style=opacity:0.9;overflow:visible;padding:calc(14*var(--rpx))>
+                      <div class=text-content>
+                        <p style='--font-size:14;line-height:1.25'><span style=color:rgb(255,255,255)>how available do
+                            we need a server to be?</span></p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div id=text-36 data-type=text class="block overflow-visible"
+                    style=--height:48;--width:424;--x:488;--y:840;--z:49947;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible" style=overflow:visible;padding:calc(14*var(--rpx))>
+                      <div class=text-content>
+                        <p style='--font-size:16;line-height:1.25'><span style=color:rgb(255,255,255)>do we have enough
+                            trust to share servers? </span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id=text-67 data-type=text class="block overflow-visible"
+                    style=--height:47;--width:46;--x:270;--y:840;--z:50122;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                      <div class=text-content>
+                        <p style=font-family:sans-serif;--font-size:18;line-height:1.25>⭐️</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id=text-79 data-type=text class="block overflow-visible"
+                    style=--height:46;--width:239;--x:537;--y:868;--z:50192;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible"
+                      style=opacity:0.9;overflow:visible;padding:calc(14*var(--rpx))>
+                      <div class=text-content>
+                        <p style='--font-size:14;line-height:1.25'><span style=color:rgb(255,255,255)>what is our threat
+                            model?</span></p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div id=text-58 data-type=text class="block overflow-visible"
+                    style=--height:48;--width:451;--x:350;--y:925;--z:50077;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible" style=overflow:visible;padding:calc(14*var(--rpx))>
+                      <div class=text-content>
+                        <p style='--font-size:16;line-height:1.25;text-align:center'><span
+                            style=color:rgb(255,255,255)>where will our physical infrastructure live?</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id=text-74 data-type=text class="block overflow-visible"
+                    style=--height:47;--width:42;--x:119;--y:925;--z:50157;--rotation:0;--scale-x:1;--scale-y:1>
+                    <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                      <div class=text-content>
+                        <p style=font-family:sans-serif;--font-size:18;line-height:1.25>✨</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div id=text-80 data-type=text class="block overflow-visible"
+                style=--height:49;--width:44;--x:350;--y:1032;--z:50197;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style=font-family:sans-serif;--font-size:20;line-height:1.25>🌎</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id=extras data-type=section style=--parent-rpx:var(--rpx);background:rgba(0,0,0,0.8)>
+            <div data-type=content class=freeform style=--height:757.3734374999999;>
+              <div id=shape-19 data-type=shape class=block
+                style=--height:415;--width:415;--x:563;--y:182;--z:49737;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class=block-content style=overflow:hidden><svg xmlns=http://www.w3.org/2000/svg height=100%
+                    width=100% viewBox="0 0 512 512" preserveAspectRatio=none>
+                    <circle cx=256 cy=256 r=256 fill="rgba(201, 243, 239, 1)"></circle>
+                  </svg></div>
+              </div>
+              <div id=gif-4 data-type=gif class=block aria-label="hanging vines and flowers drifting in the breeze"
+                style=--height:363;--width:363;--x:571;--y:174;--z:49912;--rotation:0;--scale-x:1;--scale-y:1;pointer-events:none>
+                <div class=block-content style=overflow:hidden>
+                  <picture>
+                    <source
+                      srcset="https://media0.giphy.com/media/LAaop3d8mpx0KjltzO/100w.webp 100w,https://media0.giphy.com/media/LAaop3d8mpx0KjltzO/200w.webp 200w,https://media0.giphy.com/media/LAaop3d8mpx0KjltzO/giphy.webp 300w"
+                      sizes="(max-width: 600px) 36280vw, 217680px" type="image/webp">
+                    <source
+                      srcset="https://media0.giphy.com/media/LAaop3d8mpx0KjltzO/100w.gif 100w,https://media0.giphy.com/media/LAaop3d8mpx0KjltzO/200w.gif 200w,https://media0.giphy.com/media/LAaop3d8mpx0KjltzO/giphy.gif 300w"
+                      sizes="(max-width: 600px) 36280vw, 217680px" type="image/gif"><img
+                      src="https://media0.giphy.com/media/LAaop3d8mpx0KjltzO/giphy.gif"
+                      title="Source: Asian Civilisations Museum" alt="Source: Asian Civilisations Museum"
+                      draggable="false" loading="eager">
+                  </picture>
+                </div>
+              </div>
+              <div id=text-78 data-type=text class="block overflow-visible"
+                style=--height:53;--width:185;--x:201;--y:76;--z:50187;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible"
+                  style=opacity:1;overflow:visible;padding:calc(14*var(--rpx))>
+                  <div class=text-content>
+                    <h2 style='--font-size:20;line-height:1.25'><span style=color:#ffffff><strong>bonus
+                          content</strong></span></h2>
+                  </div>
+                </div>
+              </div>
+              <div id=image-5 data-type=image class=block
+                aria-label="photo of a lan party, a person is duct taped to the ceiling in the background, leaning down to use a raised desktop computer"
+                style=--height:295;--width:295;--x:114;--y:312;--z:50177;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class=block-content style=border-radius:calc(7*var(--rpx));overflow:hidden><img
+                    src="assets/lan_party_1.jpg"
+                    title="photo of a lan party, a person is duct taped to the ceiling in the background, leaning down to use a raised desktop computer"
+                    alt="photo of a lan party, a person is duct taped to the ceiling in the background, leaning down to use a raised desktop computer"
+                    draggable="false"></div>
+              </div>
+              <div id=image-6 data-type=image class=block
+                aria-label="photo of a lan party, a person is duct taped to the ceiling, eating pizza from a tall computer desk"
+                style=--height:210;--width:280;--x:362;--y:416;--z:50182;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class=block-content style=border-radius:calc(7*var(--rpx));overflow:hidden>
+                  <picture><img src="assets/lan_party_2.jpg"
+                      title="photo of a lan party, a person is duct taped to the ceiling, eating pizza from a tall computer desk"
+                      alt="photo of a lan party, a person is duct taped to the ceiling, eating pizza from a tall computer desk"
+                      draggable="false" loading="lazy"></picture>
+                </div>
+              </div>
+              <div id=text-86 data-type=text class="block overflow-visible"
+                style=--height:114;--width:190;--x:108;--y:518;--z:50252;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible"
+                  style=opacity:0.6;overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:14;line-height:1.4'><span style=color:#ffffff>nostalgia is a trap but i’ll
+                        always love these iconic LAN party
+                        pics</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-81 data-type=text class="block overflow-visible"
+                style=--height:114;--width:568;--x:366;--y:683;--z:50207;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.4'><span style=color:rgb(255,255,255)><em>silly
+                          catchphrases</em> </span>
+                    <p style='--font-size:16;line-height:1.4'><span style=color:rgb(255,255,255)>let’s...</span>
+                    <p style='--font-size:16;line-height:1.4'><span style=color:rgb(255,255,255)>&gt; break bread and
+                        fix phones</span>
+                    <p style='--font-size:16;line-height:1.4'><span style=color:rgb(255,255,255)>&gt; connect with each
+                        other and connect a mesh network</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id=chillzone data-type=section style=--parent-rpx:var(--rpx);background:rgba(0,0,0,0.75);opacity:1>
+            <div data-type=content class=freeform style=--height:667.7;>
+              <div id=image-7 data-type=image class=block
+                style=--height:289;--width:331;--x:650;--y:163;--z:50262;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class=block-content style=overflow:hidden>
+                  <picture><img src="assets/palacechat.jpg"
+                      title="screenshot of PalaceChat, full of colorful dollz-style avatars"
+                      alt="screenshot of PalaceChat, full of colorful dollz-style avatars" draggable="false"
+                      loading="lazy"></picture>
+                </div>
+              </div>
+              <div id=header-55 data-type=text class="block overflow-visible"
+                style=--height:47;--width:406;--x:245;--y:256;--z:50267;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:16;line-height:1.4'><span style=color:rgb(255,255,255)><em><strong>places to
+                            hang out on the world wide
+                            web</strong></em></span></p>
+                  </div>
+                </div>
+              </div>
+              <div id=text-87 data-type=text class="block overflow-visible"
+                style=--height:293;--width:522;--x:422;--y:483;--z:50257;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <ul
+                      style="--font-size:16;line-height:1.4;color:rgb(255,255,255);list-style-type: '>';--link-color:rgb(157,122,210)">
+                      <li>Roguelike Celebration’s <a target=_self rel="noopener noreferrer nofollow"
+                          href=https://dev.to/lazerwalker/using-game-design-to-make-virtual-events-more-social-24o>MUD-like
+                          chat game</a></li>
+                      <li><a target=_blank rel="noopener noreferrer nofollow"
+                          href=https://hellopaint.io />hellopaint.io</a> (doodle with friends)</li>
+                      <li>remote office platforms like <a target=_blank rel="noopener noreferrer nofollow"
+                          href=https://gather.town />gather.town</a></li>
+                      <li><a target=_blank rel="noopener noreferrer nofollow"
+                          href=https://deepcut.live />deepcut.live</a><span style=color:rgb(255,255,255)>
+                          (dj with friends)</li>
+                      <li>collaborative whiteboard (yunohost has <a target=_self rel="noopener noreferrer nofollow"
+                          href=https://apps.yunohost.org/app/tldraw>tldraw</a>)</li>
+                      <li>the <a target=_blank rel="noopener noreferrer nofollow"
+                          href=https://github.com/Skittish/virtual-venue-prototype>code</a> for
+                        <a target=_self rel="noopener noreferrer nofollow"
+                          href=https://waxy.org/2022/10/winding-down-skittish />Skittish</a>
+                        is available to fork if someone can figure out a new backend
+                      </li>
+                      <li>⚠️🥲 seemingly down:
+                        <ul style="list-style-type: '>';padding-left:0.5em">
+                          <li><a target=_blank rel="noopener noreferrer nofollow"
+                              href=https://cozyroom.xyz />cozyroom.xyz</a>
+                            (blob hangout + p2p spatial audio)</li>
+                          <li><a target=_self rel="noopener noreferrer nofollow"
+                              href=https://sprout.place />sprout.place</a>
+                            (collaborative workspace + video)</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div id=gif-5 data-type=gif class=block
+                style=--height:217;--width:217;--x:48;--y:463;--z:50202;--rotation:0;--scale-x:1;--scale-y:1;pointer-events:none>
+                <div class=block-content style=overflow:hidden>
+                  <picture>
+                    <source
+                      srcset="https://media1.giphy.com/media/pIDQVCnqYhUyI/100w.webp 100w,https://media1.giphy.com/media/pIDQVCnqYhUyI/200w.webp 200w,https://media1.giphy.com/media/pIDQVCnqYhUyI/giphy.webp 300w"
+                      sizes="(max-width: 600px) 21690vw, 130140px" type="image/webp">
+                    <source
+                      srcset="https://media1.giphy.com/media/pIDQVCnqYhUyI/100w.gif 100w,https://media1.giphy.com/media/pIDQVCnqYhUyI/200w.gif 200w,https://media1.giphy.com/media/pIDQVCnqYhUyI/giphy.gif 300w"
+                      sizes="(max-width: 600px) 21690vw, 130140px" type="image/gif">
+                    <img src="https://media1.giphy.com/media/pIDQVCnqYhUyI/giphy.gif" title="Source: AnimatedText"
+                      alt="Source: AnimatedText" draggable="false" loading="eager">
+                  </picture>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id=section-2 data-type=section style=--parent-rpx:var(--rpx);background:rgba(0,0,0,0.5)>
+            <div data-type=content class=freeform style=--height:250;>
+              <div id=text-88 data-type=text class="block overflow-visible"
+                style=--height:92;--width:668;--x:350;--y:142;--z:50272;--rotation:0;--scale-x:1;--scale-y:1>
+                <div class="block-content overflow-visible" style=overflow:visible;padding:calc(12*var(--rpx))>
+                  <div class=text-content>
+                    <p style='--font-size:24;line-height:1.4;text-align:center;color:rgb(255,255,255)'>
+                      ⌘<br><br>
+                    </p>
+                    <p style='--font-size:16;line-height:1.4;text-align:center;color:rgb(255,255,255)'>
+                      built by <a target=_blank rel="noopener noreferrer nofollow" href=https://cubegho.st /><span
+                        style=color:rgb(255,255,255)><u>cubeghost</u></span></a> using <a target=_blank
+                        rel="noopener noreferrer nofollow" href=https://mmm.page /><span
+                        style=color:rgb(255,255,255)><u>mmm.page</u></span></a> <br>as
+                      part of <a target=_blank rel="noopener noreferrer nofollow"
+                        href=https://infrastructures.us /><span style=color:rgb(255,255,255)><u>solidarity
+                          infrastructures</u></span></a> winter ‘25<br>
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
