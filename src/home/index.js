@@ -9,6 +9,13 @@ import Preview from '../components/Preview';
 
 const Home = () => (
   <Home.Page>
+    <Home.Banner>
+      {"🇵🇸 "}
+      <ExternalLink href="https://gazafunds.com/">gazafunds.com</ExternalLink>{" 🇵🇸 "}
+      <ExternalLink href="https://linktr.ee/thesameerproject">sameer project</ExternalLink>{" 🇵🇸 "}
+      <ExternalLink href="https://chuffed.org/project/hope-giving-circle">hope giving circle</ExternalLink>{" 🇵🇸🇸🇩 "}
+      <ExternalLink href="https://chuffed.org/project/126887-abu-hureirah-aid-network">abu hureirah aid network</ExternalLink>
+    </Home.Banner>
     <h1>⟡*·_</h1>
     <br /><br /><br />
     <Tree label="~/cubeghost" root>
@@ -107,8 +114,24 @@ Home.Page = styled(Page)`
   width: 100%;
   max-width: 40rem;
   margin: 0 auto;
+  margin-top: 2rem;
 
   a {
     color: blue;
   }
 `;
+
+Home.Banner = styled.div`
+  background: #000;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+  text-align: center;
+
+  a {
+    color: #fff;
+  }
+`
