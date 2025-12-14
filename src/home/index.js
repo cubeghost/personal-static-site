@@ -22,7 +22,7 @@ const Home = () => (
       <Preview
         content={<img src={require('./assets/afffirmations.png').default} alt="screenshot of the '@afffirmations generator' user interface showing a preview on one side and inputs on the other" />}
       >
-        <ExternalLink href="https://afffirmations.glitch.me/">
+        <ExternalLink href="https://afffirmations.netlify.app/">
           @afffirmations generator
         </ExternalLink>,2021
       </Preview>
