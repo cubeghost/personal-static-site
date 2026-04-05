@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -7,14 +8,39 @@ import ExternalLink from '../components/ExternalLink';
 import Tree from '../components/Tree';
 import Preview from '../components/Preview';
 
+const FLAG_LABELS = {
+  '🇵🇸': 'Palestine',
+  '🇱🇧': 'Lebanon',
+  '🇸🇩': 'Sudan',
+};
+const DonationLink = ({href, flags, children}) => {
+  const flagsArray = Array.isArray(flags) ? flags : [flags];
+  const flagsLabel = `${flagsArray.length > 1 ? 'Flags' : 'Flag'} of ${flagsArray.map(flag => FLAG_LABELS[flag]).join(' and ')}`;
+
+  return (
+    <Home.BannerLink>
+      <span role="img" aria-label={flagsLabel}>
+        {flagsArray.join('')}
+      </span>
+      <ExternalLink href={href}>{children}</ExternalLink>
+    </Home.BannerLink>
+  );
+};
+DonationLink.propTypes = {
+  href: PropTypes.string,
+  flags: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
+  children: PropTypes.node,
+};
+
 const Home = () => (
   <Home.Page>
     <Home.Banner>
-      {"🇵🇸 "}
-      <ExternalLink href="https://gazafunds.com/">gazafunds.com</ExternalLink>{" 🇵🇸 "}
-      <ExternalLink href="https://linktr.ee/thesameerproject">sameer project</ExternalLink>{" 🇵🇸 "}
-      <ExternalLink href="https://chuffed.org/project/hope-giving-circle">hope giving circle</ExternalLink>{" 🇵🇸🇸🇩 "}
-      <ExternalLink href="https://chuffed.org/project/126887-abu-hureirah-aid-network">abu hureirah aid network</ExternalLink>
+      <DonationLink flags="🇵🇸" href="https://chuffed.org/project/bridgeofsolidarity">bridge of solidarity</DonationLink>
+      <DonationLink flags="🇱🇧" href="https://chuffed.org/project/lebanonsolidarity">lebanon solidarity collective</DonationLink>
+      <DonationLink flags={['🇸🇩', '🇵🇸']} href="https://chuffed.org/project/126887-abu-hureirah-aid-network">abu hureirah aid network</DonationLink>
+      <DonationLink flags="🇵🇸" href="https://chuffed.org/project/hope-giving-circle">hope giving circle</DonationLink>
+      <DonationLink flags="🇵🇸" href="https://linktr.ee/thesameerproject">sameer project</DonationLink>
+      <DonationLink flags="🇵🇸" href="https://gazafunds.com/">gazafunds.com</DonationLink>
     </Home.Banner>
     <h1>⟡*·_</h1>
     <br /><br /><br />
@@ -121,7 +147,7 @@ Home.Page = styled(Page)`
   }
 `;
 
-Home.Banner = styled.div`
+Home.Banner = styled.ul`
   background: #000;
   color: #fff;
   position: absolute;
@@ -130,8 +156,17 @@ Home.Banner = styled.div`
   width: 100%;
   padding: 0.5rem;
   text-align: center;
+  font-size: 0.875rem;
+`;
+
+Home.BannerLink = styled.li`
+  display: inline-block;
+
+  span {
+    padding: 0 0.5rem;
+  }
 
   a {
     color: #fff;
   }
-`
+`;
